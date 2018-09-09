@@ -1,0 +1,146 @@
+/*body{
+    overflow-x: hidden;
+}*/
+
+#app{
+    margin-left: 60px;
+    min-width: unset !important;
+}
+
+#app .home-page .home-container{
+    margin-top: 0;
+}
+#app .home-page .home-container .home-content{
+    min-width: 794px;
+    width: 100%;
+    max-width: 806px;
+}
+#app .home-page .home-container .home-content .right-panel{
+    width: calc(100% - 562px);
+    /*max-width: 268px;*/
+    /*min-width: 224px;*/
+}
+#app .home-page .home-container .home-content .right-panel .right-panel-wrapper{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    margin-right: 8px;
+    height: 100vh;
+    overflow-y: auto;
+    overscroll-behavior-y: none;
+}
+/*#app .home-page .home-container .home-content .right-panel .right-panel-wrapper.sticky{
+    position: sticky;
+    transition: transform 0.5s;
+}*/
+#app .home-page .home-container .home-content .right-panel .right-panel-wrapper > div{
+    margin: 8px 0 0 0;
+    width: 100%;
+    overflow: unset;
+}
+#app .user-panel{
+    order: 0;
+}
+#app .live-panel{
+    order: 1;
+}
+#app .notice-panel{
+    order: 2;
+}
+#app .tag-panel{
+    order: 3;
+}
+#app .home-page .home-container .home-content .right-panel .right-panel-wrapper > div:last-child{
+    margin-bottom: 8px;
+}
+#app .user-panel .content{
+    border-radius: 4px;
+    overflow: hidden;
+}
+#app .user-panel .content .bottom{
+    width: auto;
+}
+#app .notice-panel .img-container .notice-img{
+    width: 100%;
+    height: auto;
+    max-width: 236px;
+}
+#app .home-page .home-container .home-content .right-panel > div .more-button{
+    left: auto;
+    right: 21px;
+}
+#app .live-up .live-up-name{
+   display: flex;
+}
+
+#app .back-top{
+    bottom: -30px;
+}
+
+#app .home-page .home-container .home-content .center-panel{
+    width: 546px;
+}
+#app .feed-card{
+    min-width: unset;
+}
+#app .card{
+    min-width: unset;
+}
+#app .card .main-content{
+    margin-left: 12px;
+    padding-top: 15px;
+}
+#app .card .main-content .user-name, #app .card .main-content .time/*, #app .card-content > .description*/{
+    margin-left: 76px;
+}
+#app .card .user-head{
+    top: 13px;
+}
+#app .card-content{
+    margin-top: 20px;
+}
+
+#app .tab-bar .tab:first-child{
+    padding-left: 15px;
+}
+#app .tab-bar .line{
+    left: -5px;
+}
+
+#app .vc-ctnr{
+    height: 300px;
+}
+#app .vc-ctnr video{
+    display: block;
+    max-width: 100%;
+    height: 100%;
+    width: 100%;
+}
+
+#app .comment-area, #app .forw-area{
+    width: 100%;
+}
+#app .comment-area .comm-main, #app .forw-area .forw-main{
+    padding-left: 12px;
+    /*width: 100%;
+    box-sizing: border-box;*/
+}
+/*#app .textarea-container .textarea{
+    width: 472px !important;
+}
+#app .comm-list .textarea-container .textarea{
+    width: 460px !important;
+}
+#app .dynamic-list-item-wrap .item-detail .text, #app .child-item-warp .item-detail{
+    width: 482px;
+}*/
+#app .comm-face, #app .forw-face{
+    margin-right: 5px;
+}
+
+#app .sticky-bar, #app .home-page .home-container .home-content .center-panel .section-block, 
+#app .home-page .home-container .home-content .left-panel,
+#app .userinfo-wrapper
+{
+    display: none;
+}

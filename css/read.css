@@ -1,0 +1,252 @@
+body{
+	display: flex;
+	justify-content: center;
+}
+
+#BT-read .nav-tab-bar{
+	float: none;
+	position: fixed;
+    top: 0;
+    left: 60px;
+    width: 100%;
+    height: 30px;
+    padding-left: 6px;
+    padding-bottom: 1px;
+    background-color: #fff;
+    z-index: 1;
+    transform: none;
+}
+#BT-read .nav-tab-bar .tab-item.on{
+    border-bottom: 2px solid;
+}
+#BT-read .nav-tab-bar .logo{
+	display: none;
+}
+#BT-read .nav-tab-bar .tab-item, #BT-read .nav-tab-bar .tab-item[data-tab-id="0"]{
+	display: inline-block;
+	margin: 0 30px 0 0;
+	width: auto;
+}
+#BT-read .nav-tab-bar .tab-item:before{
+	content: none;
+}
+
+#BT-read .page-container{
+	box-sizing: border-box;
+    margin: 0 6px 0 66px;
+    padding-right: 0;
+    width: auto;
+    padding-top: 30px;
+}
+#BT-read .article-holder, #BT-read .head-container{
+	max-width: unset;
+}
+#BT-read .banner-img-holder{
+	margin: 0 auto 10px auto;
+    padding-top: 0;
+    height: 371.25px;
+}
+#BT-read .right-side-bar{
+    right: 7px;
+    top: 33px;
+    z-index: 1;
+}
+#BT-read .right-side-bar .to-comment .comment-num-holder{
+	display: none;
+}
+#BT-read .article-holder img{
+	max-width: 660px;
+	height: auto !important;
+}
+#BT-read .title-container{
+	text-align: center;
+}
+#BT-read .up-info-holder{
+	margin-left: 0;
+}
+#BT-read .up-info-holder .fixed-box, #BT-read .up-info-holder.to-bottom .fixed-box, #BT-read .up-info-holder.scroll .fixed-box{
+	position: relative;
+    margin-left: 0;
+    border-top: 1px solid #e5e9ef;
+    border-bottom: 1px solid #e5e9ef;
+    padding-top: 12px;
+    padding-bottom: 12px;
+	transform: none;
+}
+#BT-read .up-info-holder.BT-new .fixed-box{
+    border: none;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 30px;
+    min-height: 64px;
+}
+#BT-read .up-info-holder .fixed-box .up-info-block{
+    display: inline-block;
+}
+#BT-read .up-info-holder .fixed-box .follow-btn-holder{
+	position: absolute;
+    right: 0;
+    display: inline-block;
+    padding-left: 0;
+    margin-left: auto;
+    text-align: right;
+    top: 22px;
+}
+#BT-read .up-info-holder.BT-new .fixed-box .follow-btn-holder{
+	top: 12px;
+}
+#BT-read .up-info-holder .fixed-box .up-article-list-block{
+	margin-top: 12px;
+}
+#BT-read .up-info-holder .fixed-box .up-article-list-block .block-title{
+	font-size: 14px;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+#BT-read .up-info-holder .fixed-box .up-article-list-block .article-list .article-item, #BT-read .up-info-holder .fixed-box .up-article-list-block .article-list .article-item:first-child{
+    display: inline-block;
+	width: 48%;
+    margin-top: 12px;
+}
+#BT-read .up-info-holder .fixed-box .up-article-list-block .more-article{
+    background: none;
+    margin-bottom: 0;
+    width: 100%;
+    margin-top: 5px;
+}
+#BT-read .up-info-holder .fixed-box .more{
+	display: none;
+}
+#BT-read .comment-title-block{
+	margin-top: 20px;
+}
+#BT-read .up-info-holder .fixed-box .up-article-list-block .article-list .article-item a{
+	display: flex;
+}
+#BT-read .up-info-holder .fixed-box .up-article-list-block .article-list .article-item .article-title{
+	flex-grow: 1;
+}
+#BT-read .up-info-holder .fixed-box .up-article-list-block .article-list{
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#BT-read .tab-content{
+    padding-left: 60px;
+    width: auto;
+    overflow-x: hidden;
+}
+#BT-read .page-content{
+	/*display: flex;*/
+    background-color: #eaeaea;
+    padding: 30px 6px 0 6px;
+    overflow-x: auto;
+}
+#BT-read .page-content .left-side{
+    width: calc(100vw - 342px);
+    overflow-x: hidden;
+    margin-right: 10px;
+    max-width: 680px;
+    min-width: 512px;
+}
+#BT-read .page-content .right-side{
+	position: static !important;
+    /*flex-shrink: 0;*/
+    transform: none;
+}
+#BT-read .page-content .right-side .right-side-fixed{
+    position: fixed;
+    width: 260px;
+    overflow-y: auto;
+    height: calc(100vh - 73px);
+    overscroll-behavior-y: none;
+}
+#BT-read .categories-bar{
+	position: fixed;
+    width: 100%;
+	height: 40px;
+    left: 60px;
+    top: 31px;
+    margin: 0;
+    border-bottom: 1px solid #ccc;
+    padding-left: 7px;
+	padding-top: 1px;
+	background-color: #f4f4f4;
+	line-height: 40px;
+    z-index: 1;
+}
+#BT-read .categories-bar .tag-item{
+	border: 1px solid #ccc;
+    border-radius: 33px;
+    padding: 5px 10px;
+    background-color: #fafafa;
+    line-height: normal;
+    vertical-align: middle;
+}
+#BT-read .categories-bar .tag-item.on{
+	border: 1px solid #00a1d6;
+}
+#BT-read .page-content .left-side .article-list .article-list-holder .article-item{
+	margin: 10px 0;
+    border-radius: 4px;
+    box-shadow: 0 3px 10px 0 rgba(213,216,219,0.44);
+}
+#BT-read .page-content .left-side .article-list .article-list-holder .article-item .item-holder{
+    padding: 0;
+}
+#BT-read .page-content .left-side .article-list .article-list-holder .article-item .item-holder .article-content .article-left-block{
+    width: 100%;
+    padding: 6px 6px 0 6px;
+    box-sizing: border-box;
+    margin-right: 0;
+}
+#BT-read .page-content .left-side .article-list .article-list-holder .article-item .item-holder .article-desc{
+    white-space: normal;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    height: 46px;
+}
+#BT-read .page-content .left-side .article-list .article-list-holder .article-item .item-holder .article-content .article-left-block .article-info-bar{
+	bottom: 4px;
+}
+#BT-read .page-content .left-side .article-list .article-list-holder .article-item .item-holder .article-content .cover-img{
+	width: 100%;
+    border-radius: unset;
+    margin-bottom: 33px;
+    height: 120px;
+}
+#BT-read .page-content .left-side .article-list .article-list-holder .article-item .item-holder .article-content .cover-img .cover-image{
+	background-size: cover;
+}
+#BT-read .page-content .left-side .carousel{
+	margin-top: 8px;
+	margin-bottom: 10px;
+	width: 100%;
+	height: auto;
+}
+#BT-read .page-content .left-side .carousel .carousel-list .carousel-item{
+	height: auto;
+	width: 25%;
+}
+#BT-read .page-content .right-side .search-module{
+    background-color: #fff;
+    margin-top: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+#BT-read .page-content .right-side .rank-module{
+	background-color: #fff;
+    padding: 6px;
+    border-radius: 4px;
+}
+#BT-read .page-content .right-side .up-list{
+    margin-top: 10px;
+    padding: 6px;
+    border-radius: 4px;
+}
+
+.nameplate-card, .user-card{
+	display: none !important;
+}

@@ -1,0 +1,15 @@
+#app .history-wrap{
+    max-width: 980px;
+    width: 100%;
+    min-width: 780px;
+    padding-top: 10px;
+}
+#app .history-list .cover-contain{
+	margin-right: 10px;
+}
+#app .history-list .r-info .r-txt{
+	width: calc(100% - 170px);
+}
+#app .history-list .r-info .w-info .time-wrap{
+	width: 150px;
+}

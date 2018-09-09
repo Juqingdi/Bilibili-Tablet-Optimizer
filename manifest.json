@@ -1,0 +1,135 @@
+{
+   "manifest_version": 2,
+   "name": "bilibili平板端优化",
+   "description": "bilibili平板端优化",
+   "permissions": [ "*://*.bilibili.com/*", "https://*.acgvideo.com/*", "https://static.hdslb.com/*", "tabs", "cookies", "webRequest", "webRequestBlocking"],
+   "version": "1.0",
+   "background": {
+      "page": "background.html"
+   },
+   "content_scripts": [
+      {
+         "matches": [ "*://*.bilibili.com/*" ],
+         "js": [ "js/useragent.js" ],
+         "css": [ "css/common.css" ],
+         "run_at": "document_start"
+      },
+      {
+         "matches": [ "*://www.bilibili.com/", "*://www.bilibili.com/?*" ],
+         "js": [ "js/home_preinject.js" ],
+         "run_at": "document_start",
+         "css": [ "css/home.css" ]
+      },
+      {
+         "matches": [ "*://www.bilibili.com/", "*://www.bilibili.com/?*" ],
+         "js": [ "js/jquery.min.js", "js/common.js", "js/home.js" ],
+         "run_at": "document_end"
+      },
+      {
+         "matches": [ "*://www.bilibili.com/video/*" ],
+         "js": [ "js/video_preinject.js" ],
+         "css": [ "css/video.css" ],
+         "run_at": "document_start"
+      },
+      {
+         "matches": [ "*://www.bilibili.com/video/*" ],
+         "js": [ "js/jquery.min.js", "js/common.js", "js/video.js" ],
+         "run_at": "document_end"
+      },
+      {
+         "matches": [ "*://t.bilibili.com/*" ],
+         "css": [ "css/updates.css" ],
+         "run_at": "document_start"
+      },
+      {
+         "matches": [ "*://t.bilibili.com/*" ],
+         "js": [ "js/jquery.min.js", "js/common.js", "js/updates.js" ],
+         "run_at": "document_end"
+      },
+      {
+         "matches": [ "*://message.bilibili.com/*" ],
+         "css": [ "css/message.css" ],
+         "run_at": "document_start"
+      },
+      {
+         "matches": [ "*://message.bilibili.com/*" ],
+         "js": [ "js/jquery.min.js", "js/common.js", "js/message.js" ],
+         "run_at": "document_end"
+      },
+      {
+         "matches": [ "*://www.bilibili.com/read/*" ],
+         "exclude_matches": [ "*://www.bilibili.com/read/ranking*" ],
+         "js": [ "js/read_preinject.js" ],
+         "css": [ "css/read.css" ],
+         "run_at": "document_start"
+      },
+      {
+         "matches": [ "*://www.bilibili.com/read/*" ],
+         "exclude_matches": [ "*://www.bilibili.com/read/ranking*" ],
+         "js": [ "js/jquery.min.js", "js/common.js", "js/read.js" ],
+         "run_at": "document_end"
+      },
+      {
+         "matches": [ "*://space.bilibili.com/*" ],
+         "css": [ "css/space.css" ],
+         "run_at": "document_start"
+      },
+      {
+         "matches": [ "*://space.bilibili.com/*" ],
+         "js": [ "js/jquery.min.js", "js/common.js", "js/space.js" ],
+         "run_at": "document_end"
+      },
+      {
+         "matches": [ "*://www.bilibili.com/watchlater/*" ],
+         "js": [ "js/watchlater_preinject.js" ],
+         "css": [ "css/watchlater.css" ],
+         "run_at": "document_start"
+      },
+      {
+         "matches": [ "*://www.bilibili.com/watchlater/*" ],
+         "js": [ "js/jquery.min.js", "js/common.js", "js/watchlater.js" ],
+         "run_at": "document_end"
+      },
+      {
+         "matches": [ "*://www.bilibili.com/account/history/*" ],
+         "js": [ "js/history_preinject.js" ],
+         "css": [ "css/history.css" ],
+         "run_at": "document_start"
+      },
+      {
+         "matches": [ "*://www.bilibili.com/account/history/*" ],
+         "js": [ "js/jquery.min.js", "js/common.js", "js/history.js" ],
+         "run_at": "document_end"
+      },
+      {
+         "matches": [ "*://search.bilibili.com/*" ],
+         "js": [ "js/search_preinject.js" ],
+         "css": [ "css/search.css" ],
+         "run_at": "document_start"
+      },
+      {
+         "matches": [ "*://search.bilibili.com/*" ],
+         "js": [ "js/jquery.min.js", "js/common.js", "js/search.js" ],
+         "run_at": "document_end"
+      },
+      {
+         "matches": [ "*://live.bilibili.com/*" ],
+         "css": [ "css/live.css" ],
+         "run_at": "document_start"
+      },
+      {
+         "matches": [ "*://live.bilibili.com/*" ],
+         "js": [ "js/jquery.min.js", "js/common.js", "js/live.js" ],
+         "run_at": "document_end"
+      }
+   ],
+   "icons": {
+      "16": "img/icon16.png",
+      "48": "img/icon48.png",
+      "128": "img/icon128.png"
+   },
+   "browser_action": {
+      "default_icon": "img/toolbar.png"
+   },
+   "web_accessible_resources": [ "css/*.css", "css/iconfont.ttf" ]
+}

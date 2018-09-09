@@ -1,0 +1,208 @@
+#app {
+	margin-left: 66px;
+}
+
+@font-face {
+  font-family: "BT-iconfont";
+  src: url('chrome-extension://__MSG_@@extension_id__/css/iconfont.ttf?t=1531174210070') format('truetype') /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+}
+
+.BT-iconfont {
+  font-family:"BT-iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#BT-sidemenu .icon-home:before { content: "\e65f"; }
+#BT-sidemenu .current .icon-home:before { content: "\e660"; }
+#BT-sidemenu .icon-category:before { content: "\e662"; }
+#BT-sidemenu .current .icon-category:before { content: "\e661"; }
+#BT-sidemenu .icon-updatings:before { content: "\e664"; }
+#BT-sidemenu .current .icon-updatings:before { content: "\e663"; }
+#BT-sidemenu .icon-my:before { content: "\e665"; }
+#BT-sidemenu .current .icon-my:before { content: "\e666"; }
+#BT-sidemenu .icon-discovery:before { content: "\e667"; }
+#BT-sidemenu .current .icon-discovery:before { content: "\e667"; }
+#BT-sidemenu .icon-history:before { content: "\e671"; }
+#BT-sidemenu .current .icon-history:before { content: "\e671"; }
+
+#BT-sidemenu {
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 60px;
+	color: #888;
+	background-color: #343434;
+	z-index: 1000;
+    font-size: 12px;
+    line-height: normal;
+}
+#BT-sidemenu ul, #BT-sidemenu p{
+    margin: 0;
+    padding: 0;
+}
+#BT-sidemenu ul.submenu{
+    width: 100%;
+    position: absolute;
+}
+#BT-sidemenu ul.submenu1{
+    top: 0;
+}
+#BT-sidemenu ul.submenu2{
+    bottom: 0;
+}
+#BT-sidemenu ul.submenu li{
+	width: 60px;
+    height: 60px;
+    text-align: center;
+    position: relative;
+}
+#BT-sidemenu ul.submenu li.current{
+	color: #fb7299;
+}
+#BT-sidemenu ul.submenu li.active{
+	background-color: #fb7299;
+	color: #fff;
+}
+#BT-sidemenu ul.submenu li i{
+    display: block;
+	padding: 9px 0 3px 0;
+    font-size: 20px;
+}
+#BT-sidemenu ul.submenu li p{
+
+}
+#BT-sidemenu ul.submenu li a{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+#BT-sidemenu ul.popup-channels{
+	display: none;
+	position: fixed;
+	padding: 0 15px;
+    width: 220px;
+    height: auto;
+	/*top: calc(50% - 515px / 2);*/
+	top: 10px;
+	left: 70px;
+	border-radius: 5px;
+/*	background-color: #000;
+	opacity: 0.8;*/
+    background-color: rgba(0,0,0,0.8);
+}
+#BT-sidemenu ul.popup-channels:before{
+	content: '';
+    position: absolute;
+    top: 70px;
+    left: -19px;
+    border: 10px solid transparent;
+    border-right: 10px solid #000;
+}
+#BT-sidemenu ul.popup-channels.active{
+	display: block;
+}
+#BT-sidemenu ul.popup-channels li{
+	display: inline-block;
+    width: 50px;
+    height: 77px;
+    padding: 10px;
+    position: relative;
+}
+#BT-sidemenu ul.popup-channels li i{
+	display: block;
+    margin: 11px auto 0 auto;
+    width: 30px;
+    height: 30px;
+    background: url(//static.hdslb.com/images/base/icons.png) no-repeat;
+    background-position-x: -81px;
+}
+#BT-sidemenu ul.popup-channels li i.douga{
+    background-position-y: -208px;
+}
+#BT-sidemenu ul.popup-channels li i.anime{
+    background-position-y: -1232px;
+}
+#BT-sidemenu ul.popup-channels li i.guochuang{
+    background-position-y: -1620px;
+}
+#BT-sidemenu ul.popup-channels li i.music{
+    background-position-y: -336px;
+}
+#BT-sidemenu ul.popup-channels li i.dance{
+    background-position-y: -401px;
+}
+#BT-sidemenu ul.popup-channels li i.game{
+    background-position-y: -465px;
+}
+#BT-sidemenu ul.popup-channels li i.technology{
+    background-position-y: -529px;
+}
+#BT-sidemenu ul.popup-channels li i.life{
+    background-position-y: -1168px;
+}
+#BT-sidemenu ul.popup-channels li i.kichiku{
+    background-position-y: -654px;
+}
+#BT-sidemenu ul.popup-channels li i.fashion{
+    background-position-y: -785px;
+}
+#BT-sidemenu ul.popup-channels li i.ad{
+    background-position: -141px -1232px;
+}
+#BT-sidemenu ul.popup-channels li i.ent{
+    background-position-y: -593px;
+}
+#BT-sidemenu ul.popup-channels li i.cinephile{
+    background-position-y: -1551px;
+}
+#BT-sidemenu ul.popup-channels li i.cinema{
+    background-position-y: -720px;
+}
+#BT-sidemenu ul.popup-channels li p{
+	text-align: center;
+    margin-top: 5px;
+}
+#BT-sidemenu ul.popup-channels li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#BT-sidemenu ul.popup-my{
+    display: none;
+    position: fixed;
+    width: 130px;
+    height: 100%;
+    left: 60px;
+    background-color: #454344;
+    text-align: center;
+}
+#BT-sidemenu ul.popup-my.active{
+    display: block;
+}
+#BT-sidemenu ul.popup-my li{
+    height: 10%;
+    display: block;
+}
+#BT-sidemenu ul.popup-my li a{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    color: #888;
+    text-decoration: none;
+}
+
+.bili-header-m{
+    display: none;
+}

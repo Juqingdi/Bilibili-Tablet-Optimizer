@@ -1,0 +1,27 @@
+#link-message{
+    padding-left: 66px;
+}
+#link-message #link-message-container{
+    overflow-x: auto;
+}
+#link-message .container{
+    width: auto;
+    height: 100vh;
+    min-width: 788px;
+}
+#link-message .whisper{
+    height: calc(100vh - 72px);
+}
+#link-message .whisper .action-menu .menu-list{
+    left: calc(-86px + 50%);
+}
+#link-message .whisper .action-menu .menu-list:before{
+    left: calc(50% - -27px);
+}
+
+#BT-sidemenu ul.popup-my li:nth-child(8){
+    background-color: #767477;
+}
+#BT-sidemenu ul.popup-my li:nth-child(8) a{
+    color: #bbb;
+}

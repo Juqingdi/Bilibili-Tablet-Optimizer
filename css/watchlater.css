@@ -1,0 +1,26 @@
+#viewlater-app{
+	margin-left: 66px;
+}
+#viewlater-app .watch-later-list header .s-btn:first-child{
+	display: none;
+}
+#viewlater-app .watch-later-list{
+	width: 100%;
+}
+#viewlater-app .watch-later-list .list-box .av-item{
+	margin-right: 6px;
+}
+#viewlater-app .watch-later-list .list-box .av-item .av-about .t{
+	width: 100%;
+}
+
+.bili-header-m, .bili-footer{
+	display: none;
+}
+
+#BT-sidemenu ul.popup-my li:nth-child(7){
+    background-color: #767477;
+}
+#BT-sidemenu ul.popup-my li:nth-child(7) a{
+    color: #bbb;
+}

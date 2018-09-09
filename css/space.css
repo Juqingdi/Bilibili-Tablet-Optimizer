@@ -1,0 +1,239 @@
+#app{
+    margin-left: 60px;
+}
+#app .wrapper{
+    width: 100%;
+    max-width: 1100px;
+}
+
+#app .h .h-inner{
+    padding-top: 40px;
+}
+#app .h .h-basic{
+    width: calc(100% - 330px);
+}
+#app .h .h-sign, #app .h #h-sign{
+    width: 100%;
+}
+
+#app #navigator-fixed{
+    display: none;
+}
+
+#app #page-index .col-1{
+    float: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+/*#app #page-index .video .content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}*/
+
+#app #page-index .col-2{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    float: none;
+    margin-top: 10px;
+    justify-content: center;
+}
+#app #page-index .col-2 > *{
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+#app #page-index .col-2 .shop + div{
+    display: none;
+}
+#app #page-index .col-2 .section, #app #page-index .col-2 .section{
+    width: 308px;
+}
+
+#app .n .n-btn{
+    margin-right: 12px;
+}
+#app .n .n-data{
+    width: auto;
+    max-width: 58px;
+    min-width: 47px;
+}
+
+#app #page-dynamic .col-1{
+    /*margin-top: 109px;*/
+    width: 100%;
+}
+#app #page-dynamic .col-2{
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+#app #page-dynamic .col-2 .section{
+    padding: 5px 20px 15px;
+}
+#app #page-dynamic .user .info .meta .row:first-child{
+    width: 66.6%;
+    display: inline-block;
+}
+#app #page-dynamic .user .info .meta .row:last-child{
+    width: 33.3%;
+    display: inline-block;
+    border-top: none;
+}
+#app #page-dynamic .tag-list{
+    height: 21px;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+#app #page-video .col-full{
+    box-shadow: none;
+}
+#app .contribution-sidenav{
+    float: none;
+    width: 100%;
+    background-color: #f4f5f7;
+}
+#app .main-content{
+    float: none;
+}
+#app .contribution-sidenav .contribution-list-container{
+    margin: -10px 0 0 0;
+}
+#app .contribution-sidenav .contribution-item{
+    display: inline;
+}
+#app .contribution-sidenav .contribution-item.cur{
+    background-color: unset;
+}
+#app .contribution-sidenav .text{
+    width: 30px;
+    line-height: 36px;
+}
+#app .contribution-item.cur .text{
+    color: #00a1d6;
+}
+#app .contribution-item.cur .num{
+    color: #99a2aa;
+}
+/*#app #page-video .col-full{
+    box-shadow: none;
+}
+#app .contribution-sidenav, #app #page-fav .fav-sidenav{
+    float: none;
+    width: 100%;
+    background-color: #f4f5f7;
+}
+#app .main-content, #app #page-fav .fav-main{
+    float: none;
+}
+#app .contribution-sidenav .contribution-list-container{
+    margin: -10px 0 0 0;
+}
+#app #page-fav .fav-sidenav .nav-title{
+    display: none;
+}
+#app .contribution-sidenav .contribution-item, #app #page-fav .fav-sidenav .fav-item{
+    display: inline-block;
+}
+#app .contribution-sidenav .contribution-item.cur, #app #page-fav .fav-sidenav .fav-item.cur{
+    background-color: unset;
+}
+#app .contribution-sidenav .text{
+    width: 30px;
+    line-height: 36px;
+}
+#app #page-fav .fav-sidenav .text{
+    line-height: 36px;
+}
+#app .contribution-item.cur .text, #app #page-fav .fav-sidenav .fav-item.cur .text, #app #page-fav .fav-sidenav .fav-item.cur .num, #app #page-fav .fav-sidenav .fav-item.cur .icon-fav-default{
+    color: #00a1d6;
+}
+#app .contribution-item.cur .num{
+    color: #99a2aa;
+}*/
+
+#app .contribution-sidenav~.main-content, #app #page-myalbum .album-content{
+    width: 100%;
+    padding-top: 10px;
+}
+#app #page-video .cube-list{
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    display: flex;
+}
+#app #page-video .cube-list:after{
+    content: none;
+}
+#app #page-audio .section{
+    margin-top: 0;
+}
+#app #page-index .video .content,
+#app #page-audio .section .content ul,
+#app #page-myalbum .album-content .album-list,
+#app #page-channel-index .channel-list,
+#app #page-channel-detail .video-list,
+#app #page-fav .fav-main .fav-video-list,
+#app #page-bangumi .content,
+#app #page-subs .subs .content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#app #page-channel-detail .video-list,
+#app #page-bangumi .content,
+#app #page-subs .subs{
+    width: 100%;
+    margin: 0;
+}
+#app #page-index .video .content .small-item,#app #page-channel-detail .video-list .small-item{
+    padding-left: 0;
+    padding-right: 0;
+}
+#app #page-myalbum .album-content .album-list .album-card,
+#app #page-channel-index .channel-item{
+    margin-right: 0;
+}
+#app #page-fav .fav-main .small-item,
+#app #page-bangumi .large-item,
+#app #page-subs .mini-item{
+    margin-left: 0;
+    margin-right: 0;
+}
+#app #page-subs .mini-item{
+    width: 200px;
+}
+#app #page-audio .section .content ul:after,
+#app #page-channel-index .channel-list:after,
+#app #page-channel-detail .video-list:after,
+#app #page-fav .fav-main .fav-video-list:after,
+#app #page-bangumi .content:after,
+#app #page-subs .subs .content:after{
+    content: none;
+}
+#app #page-article .s-content{
+    width: calc(100% - 125px);
+}
+#app #page-fav .fav-main{
+    width: calc(100% - 180px);
+}
+#app #page-fav .fav-main .fav-info{
+    height: auto;
+}
+
+#app .to-top{
+    bottom: 10px;
+}
+
+#id-card, #app #page-fav .fav-main .small-item .cover .meta-mask{
+    display: none;
+}
+
+#BT-sidemenu ul.popup-my li:nth-child(6){
+    background-color: #767477;
+}
+#BT-sidemenu ul.popup-my li:nth-child(6) a{
+    color: #bbb;
+}
