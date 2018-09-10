@@ -59,6 +59,7 @@
     height: 60px;
     text-align: center;
     position: relative;
+    background-color: unset;
 }
 #BT-sidemenu ul.submenu li.current{
 	color: #fb7299;
@@ -192,6 +193,7 @@
 #BT-sidemenu ul.popup-my li{
     height: 10%;
     display: block;
+    position: relative;
 }
 #BT-sidemenu ul.popup-my li a{
     display: flex;
@@ -201,6 +203,45 @@
     align-items: center;
     color: #888;
     text-decoration: none;
+}
+
+#BT-sidemenu .nav-item{
+    margin-top: -60px;
+}
+#BT-sidemenu .nav-item a{
+    opacity: 0;
+    padding: 0;
+}
+#BT-sidemenu ul.popup-my .message-num{
+    display: none;
+    position: absolute;
+    height: 12px;
+    line-height: 12px;
+    color: #fff;
+    background-color: #f25d8e;
+    border-radius: 10px;
+    padding: 1px 2px;
+    font-size: 12px;
+    top: 10px;
+    right: 20px;
+    min-width: 16px;
+    text-align: center;
+}
+#BT-sidemenu ul.popup-my .message-num.active{
+    display: block;
+}
+#BT-sidemenu ul.submenu2 li.my.red-dot:after{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #f25d8e;
+    border-radius: 50%;
+    top: 6px;
+    right: 10px;
+}
+#BT-sidemenu .i-frame{
+    display: none;
 }
 
 .bili-header-m{

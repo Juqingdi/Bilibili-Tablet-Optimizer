@@ -81,7 +81,7 @@ function SetSideMenu( current = -1) {
 					<i class="BT-iconfont icon-category"></i>
 					<p>分区</p>
 				</li>
-				<li>
+				<li class="updatings">
 					<i class="BT-iconfont icon-updatings"></i>
 					<p>动态</p>
 					<a href="//t.bilibili.com/?tab=8"></a>
@@ -199,6 +199,7 @@ function SetSideMenu( current = -1) {
 				</li>
 				<li>
 					<a href="//message.bilibili.com">消息中心</a>
+					<span class="message-num"></span>
 				</li>
 				<li>
 					<a target="_blank" href="//pay.bilibili.com/paywallet-fe/bb_balance.html">我的钱包</a>
@@ -255,4 +256,72 @@ function SyncStatus() {
 		else
 			$(ele).removeClass('active');
 	});
+
+	GetDynamic();
+	GetMessage();
 }
+
+//从原header中把动态按钮挪过来，然后删了header
+function GetDynamic(){
+	if($(".bili-header-m").length === 0)
+		return;
+
+	let $nav = $(".bili-header-m .nav-con.fr");
+	let $playpageDynamic;
+	let observer = new MutationObserver((records)=>{
+		$playpageDynamic = $('.nav-item[report-id="playpage_dynamic"]', $nav);
+		if($playpageDynamic.length > 0){
+			$(".submenu1 .updatings", $sideMenu).after( $playpageDynamic);
+			$(".bili-header-m").remove();
+			observer.disconnect();
+		}
+	});
+	observer.observe($nav[0], {
+		subtree: true,
+		childList: true
+	});
+}
+
+//获取消息数目
+function GetMessage(){
+	$.getJSON('https://message.bilibili.com/api/notify/query.notify.count.do').then((result)=>{
+		// console.log(result.data);
+		if(result.data){
+			let messageNum = 0;
+			messageNum += result.data.at_me;
+			messageNum += result.data.notify_me;
+			messageNum += result.data.praise_me;
+			messageNum += result.data.reply_me;
+			messageNum += result.data.up;
+
+			if(messageNum > 0){
+				$(".popup-my .message-num", $sideMenu).text(messageNum).addClass('active');
+				$(".submenu2 .my").addClass('red-dot');
+			}
+			// $(".popup-my .message-num", $sideMenu).text(12).addClass('active'); //test
+			// $(".submenu2 .my").addClass('red-dot'); //test
+		}
+	});
+}
+
+/*function GetDynamic(){
+	if($(".bili-header-m").length === 0)
+		return;
+
+	let $nav = $(".bili-header-m .nav-con.fr");
+	let $playpageDynamic, $playpageMessage;
+	let observer = new MutationObserver((records)=>{
+		$playpageDynamic = $('.nav-item[report-id="playpage_dynamic"]', $nav);
+		$playpageMessage = $('.nav-item[report-id="playpage_message"]', $nav);
+		if($playpageDynamic.length > 0 && $playpageMessage.length > 0){
+			$(".submenu1 .updatings", $sideMenu).after( $playpageDynamic);
+			$(".submenu2 .my", $sideMenu).after( $playpageMessage);
+			$(".bili-header-m").remove();
+			observer.disconnect();
+		}
+	});
+	observer.observe($nav[0], {
+		subtree: true,
+		childList: true
+	});
+}*/
