@@ -36,6 +36,40 @@ chrome.webRequest.onBeforeSendHeaders.addListener( function(request){
 	"https://*.acgvideo.com/*"
 ]}, ["blocking", "requestHeaders"]);
 
+/*chrome.webRequest.onBeforeRequest.addListener( (request)=>{
+	// 请求链接中包含from_extension=1的话，说明是插件发送的，无需拦截
+	if( request.url.indexOf('from_extension=1') >= 0 ){
+		return {cancel: false};
+	}
+	else if( request.url.indexOf('dynamic_num') >= 0){
+		// console.log(request);
+		chrome.tabs.sendMessage(request.tabId, {
+			request: 'update',
+			url: request.url
+		});
+		return {cancel: true};
+	}
+	else
+		return {cancel: true};
+},{urls: [
+	"https://api.vc.bilibili.com/dynamic_svr/v1/dynamic_svr/dynamic_num*",
+	"https://message.bilibili.com/api/notify/query.notify.count.do"
+]}, ["blocking"] );*/
+
+chrome.webRequest.onBeforeRequest.addListener( (request)=>{
+	// 请求链接中包含from_extension=1的话，说明是插件发送的，无需处理
+	if( request.url.indexOf('from_extension=1') < 0 ){
+		// console.log(request);
+		chrome.tabs.sendMessage(request.tabId, {
+			request: 'update',
+			url: request.url
+		});
+		return {cancel: true};
+	}
+},{urls: [
+	"https://api.vc.bilibili.com/dynamic_svr/v1/dynamic_svr/dynamic_num*",
+]});
+
 /*chrome.webRequest.onBeforeRequest.addListener(
   function(details) {
     console.log(details);

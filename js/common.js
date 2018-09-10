@@ -81,7 +81,7 @@ function SetSideMenu( current = -1) {
 					<i class="BT-iconfont icon-category"></i>
 					<p>分区</p>
 				</li>
-				<li>
+				<li class="updatings">
 					<i class="BT-iconfont icon-updatings"></i>
 					<p>动态</p>
 					<a href="//t.bilibili.com/?tab=8"></a>
@@ -234,6 +234,33 @@ function SetSideMenu( current = -1) {
 	});
 	// $app.after( $sideMenu);
 	$('body').append( $sideMenu);
+
+	//获取消息数与动态数
+	let updateNum = 0, notify = 0;
+	let $updatings = $("ul.submenu1 li.updatings", $sideMenu);
+	$.getJSON( 'https://message.bilibili.com/api/notify/query.notify.count.do').then((result)=>{
+		if(result.data){
+			notify += result.data.at_me;
+			notify += result.data.notify_me;
+			notify += result.data.praise_me;
+			notify += result.data.reply_me;
+			notify += result.data.up;
+		}
+		console.log(`notify num: ${notify}`);
+	});
+	chrome.runtime.onMessage.addListener((message, sender)=>{
+		console.log(message);
+		if(message.request === 'update'){
+			$.getJSON( message.url + '&from_extension=1').then((result)=>{
+				if(result.data && result.data.update_num){
+					updateNum += result.data.update_num;
+					console.log(`update num: ${updateNum}`);
+					if(updateNum > 0)
+						$updatings.addClass('red-dot');
+				}
+			});
+		}
+	});
 }
 
 function SyncStatus() {

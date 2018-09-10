@@ -19,6 +19,7 @@ function Main() {
 			if(record.addedNodes.length > 0 && record.addedNodes[0].tagName === 'SCRIPT'){
 				currentNode = record.addedNodes[0];
 				if(
+					// currentNode.src === 'https://s1.hdslb.com/bfs/seed/jinkela/header/header.js' ||
 					// currentNode.src === 'https://s1.hdslb.com/bfs/cm/st/bundle.js' || //部分链接正常加载所需
 					// currentNode.innerText.indexOf('window.spmReportData') >= 0 || //图片加载后会执行这里的函数
 					currentNode.innerText.indexOf('isPC = false') >= 0 ||

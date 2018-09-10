@@ -202,6 +202,17 @@
     color: #888;
     text-decoration: none;
 }
+#BT-sidemenu .submenu .red-dot:after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #f00;
+}
 
 .bili-header-m{
     display: none;
