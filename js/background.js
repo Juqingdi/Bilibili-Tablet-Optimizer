@@ -22,7 +22,7 @@ chrome.cookies.set({
 });
 // console.log('cookie set');
 
-chrome.webRequest.onBeforeSendHeaders.addListener( function(request){
+chrome.webRequest.onBeforeSendHeaders.addListener( (request)=>{
 	console.log(request.url);
 	for (let t = 0,	i = request.requestHeaders.length; t < i; ++t) 
 		if ( request.requestHeaders[t].name === "User-Agent") {
@@ -35,6 +35,13 @@ chrome.webRequest.onBeforeSendHeaders.addListener( function(request){
 	"https://www.bilibili.com/*",
 	"https://*.acgvideo.com/*"
 ]}, ["blocking", "requestHeaders"]);
+
+//强制直播PC页跳转到手机页
+chrome.webRequest.onBeforeRequest.addListener( (request)=>{
+	if(request.url.indexOf("live.bilibili.com/h5") < 0){
+		return {redirectUrl: request.url.replace("live.bilibili.com", "live.bilibili.com/h5")};	
+	}
+}, {urls: ["https://live.bilibili.com/*"]}, ["blocking"] );
 
 /*chrome.webRequest.onBeforeRequest.addListener(
   function(details) {

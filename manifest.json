@@ -1,4 +1,10 @@
 {
+
+
+   // "todo": "动态页视频预览、稍后再看隐藏"
+   // "todo": "动态更新失效了"
+
+
    "manifest_version": 2,
    "name": "bilibili平板端优化",
    "description": "bilibili平板端优化",
