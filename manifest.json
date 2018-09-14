@@ -127,6 +127,16 @@
          "matches": [ "*://live.bilibili.com/*" ],
          "js": [ "js/jquery.min.js", "js/common.js", "js/live.js" ],
          "run_at": "document_end"
+      },
+      {
+         "matches": [ "*://m.bilibili.com/channel/*", "*://m.bilibili.com/ranking.html*" ],
+         "css": [ "css/channel.css" ],
+         "run_at": "document_start"
+      },
+      {
+         "matches": [ "*://m.bilibili.com/channel/*", "*://m.bilibili.com/ranking.html*" ],
+         "js": [ "js/jquery.min.js", "js/common.js", "js/channel.js" ],
+         "run_at": "document_end"
       }
    ],
    "icons": {

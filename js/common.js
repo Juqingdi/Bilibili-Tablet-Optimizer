@@ -107,72 +107,72 @@ function SetSideMenu( current = -1) {
 				<li>
 					<i class="douga"></i>
 					<p>动画</p>
-					<a href="//www.bilibili.com/v/douga/"></a>
+					<a href="//m.bilibili.com/channel/1.html"></a>
 				</li>
 				<li>
 					<i class="anime"></i>
 					<p>番剧</p>
-					<a href="//www.bilibili.com/anime/"></a>
+					<a href="//m.bilibili.com/channel/13.html"></a>
 				</li>
 				<li>
 					<i class="guochuang"></i>
 					<p>国创</p>
-					<a href="//www.bilibili.com/guochuang/"></a>
+					<a href="//m.bilibili.com/channel/167.html"></a>
 				</li>
 				<li>
 					<i class="music"></i>
 					<p>音乐</p>
-					<a href="//www.bilibili.com/v/music/"></a>
+					<a href="//m.bilibili.com/channel/3.html"></a>
 				</li>
 				<li>
 					<i class="dance"></i>
 					<p>舞蹈</p>
-					<a href="//www.bilibili.com/v/dance/"></a>
+					<a href="//m.bilibili.com/channel/129.html"></a>
 				</li>
 				<li>
 					<i class="game"></i>
 					<p>游戏</p>
-					<a href="//www.bilibili.com/v/game/"></a>
+					<a href="//m.bilibili.com/channel/4.html"></a>
 				</li>
 				<li>
 					<i class="technology"></i>
 					<p>科技</p>
-					<a href="//www.bilibili.com/v/technology/"></a>
+					<a href="//m.bilibili.com/channel/36.html"></a>
 				</li>
 				<li>
 					<i class="life"></i>
 					<p>生活</p>
-					<a href="//www.bilibili.com/v/life/"></a>
+					<a href="//m.bilibili.com/channel/160.html"></a>
 				</li>
 				<li>
 					<i class="kichiku"></i>
 					<p>鬼畜</p>
-					<a href="//www.bilibili.com/v/kichiku/"></a>
+					<a href="//m.bilibili.com/channel/119.html"></a>
 				</li>
 				<li>
 					<i class="fashion"></i>
 					<p>时尚</p>
-					<a href="//www.bilibili.com/v/fashion/"></a>
+					<a href="//m.bilibili.com/channel/155.html"></a>
 				</li>
 				<li>
 					<i class="ad"></i>
 					<p>广告</p>
-					<a href="//www.bilibili.com/v/ad/ad/"></a>
+					<a href="//m.bilibili.com/channel/165.html"></a>
 				</li>
 				<li>
 					<i class="ent"></i>
 					<p>娱乐</p>
-					<a href="//www.bilibili.com/v/ent/"></a>
+					<a href="//m.bilibili.com/channel/5.html"></a>
 				</li>
 				<li>
 					<i class="cinephile"></i>
 					<p>影视</p>
-					<a href="//www.bilibili.com/v/cinephile/"></a>
+					<a href="//m.bilibili.com/channel/181.html"></a>
 				</li>
 				<li>
 					<i class="cinema"></i>
 					<p>放映厅</p>
-					<a href="//www.bilibili.com/v/cinema/"></a>
+					<a href="//m.bilibili.com/channel/23.html"></a>
 				</li>
 			</ul>
 			<ul class="popup popup-my">

@@ -1,0 +1,69 @@
+html{
+	font-size: 25px !important;
+}
+
+#page{
+	margin-left: 60px;
+}
+#page .index__partition__src-partition-{
+	min-width: 790px;
+}
+
+#page .index__partBox__src-partition-zone-{
+	top: 0;
+	position: sticky;
+}
+#page .index__partition__src-partition- .index__line__src-partition-{
+	padding-top: 0.02133rem;
+}
+#page .index__item__src-commonComponent-Item-{
+	width: 25%;
+}
+
+#page .index__board__src-ranking-board-{
+	padding-top: 3.57436rem;
+}
+#page .index__partBox__src-ranking-tabs-{
+	width: calc(96.8% - 60px);
+}
+#page .index__partBox__src-ranking-tabs- .index__scrollContainer__src-ranking-tabs-{
+	margin-left: 40px;
+}
+#page .index__item__src-ranking-board-item-{
+	width: 50%;
+	display: inline-block;
+}
+#page .index__item__src-ranking-board-item- .index__desc__src-ranking-board-item- .index__title__src-ranking-board-item- p{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow-y: hidden;
+    height: 1.36rem;
+}
+
+#page .header-tag{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+#page .header-tag a{
+    display: inline-block;
+    width: 80px;
+    height: 28px;
+    color: #999;
+    text-decoration: none;
+}
+#page .header-tag a.active{
+    color: #fb7299;
+    border-bottom: 2px solid #fb7299;
+}
+
+#page .index__container__src-commonComponent-bottomOpenApp-,
+#page .index__topArea__src-commonComponent-topArea-,
+#page .index__partBox__src-partition-zone- .index__firstContainer__src-partition-zone-{
+	display: none;
+}

@@ -43,6 +43,15 @@ chrome.webRequest.onBeforeRequest.addListener( (request)=>{
 	}
 }, {urls: ["https://live.bilibili.com/*"]}, ["blocking"] );
 
+//强制视频播放页跳转到PC页
+chrome.webRequest.onBeforeRequest.addListener( (request)=>{
+	if(request.url.indexOf("live.bilibili.com/h5") < 0){
+		let newUrl = request.url.replace('m.bilibili', 'www.bilibili');
+		newUrl = newUrl.replace('.html', '/');
+		return {redirectUrl: newUrl};	
+	}
+}, {urls: ["https://m.bilibili.com/video/*"]}, ["blocking"] );
+
 /*chrome.webRequest.onBeforeRequest.addListener(
   function(details) {
     console.log(details);
