@@ -129,6 +129,16 @@
          "run_at": "document_end"
       },
       {
+         "matches": [ "*://www.bilibili.com/anime/timeline*", "*://www.bilibili.com/anime/index*" ],
+         "css": [ "css/timeline.css" ],
+         "run_at": "document_start"
+      },
+      {
+         "matches": [ "*://www.bilibili.com/anime/timeline*", "*://www.bilibili.com/anime/index*" ],
+         "js": [ "js/jquery.min.js", "js/common.js", "js/timeline.js" ],
+         "run_at": "document_end"
+      },
+      {
          "matches": [ "*://m.bilibili.com/channel/*", "*://m.bilibili.com/ranking.html*" ],
          "css": [ "css/channel.css" ],
          "run_at": "document_start"
