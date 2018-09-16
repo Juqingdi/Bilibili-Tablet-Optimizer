@@ -187,7 +187,13 @@ function Decorate() {
 	}
 	$(".BT-comment", $switchTag).click( ShowComment);
 	$(".BT-reco", $switchTag).click( ShowRecoList);
-	$commentRecoScroll.onSwipe('left', ShowRecoList).onSwipe('right', ShowComment);
+	// $commentRecoScroll.onSwipe('left', ShowRecoList).onSwipe('right', ShowComment);
+	$commentRecoScroll.onSwipe((direction)=>{
+		if(direction === 'left')
+			ShowRecoList();
+		else if(direction === 'right')
+			ShowComment();
+	});
 
 	$("#bofqi").prependTo($('#bofqi_container', $container));
 	$viewboxReport.appendTo($("#viewbox_report_container", $container));

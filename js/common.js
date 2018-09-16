@@ -21,7 +21,7 @@ $.fn.onSwipeRight = function( callback){
 	});
 }
 
-$.fn.onSwipe = function( direction = '', callback = null){
+/*$.fn.onSwipe = function( direction = '', callback = null){
 	if( direction === '' || callback === null)
 		return;
 	$(this).on("touchstart", function(e) {
@@ -42,6 +42,27 @@ $.fn.onSwipe = function( direction = '', callback = null){
 			if ( -X >= 30 && Math.abs(X) > Math.abs(Y) )
 				callback();
 		}
+	});
+	return this;
+}*/
+
+$.fn.onSwipe = function( callback){
+	if( !(callback && typeof(callback)==="function"))
+		return;
+	$(this).on("touchstart", function(e) {
+		startX = e.originalEvent.changedTouches[0].pageX,
+		startY = e.originalEvent.changedTouches[0].pageY;
+	});
+	$(this).on("touchend", function(e) {
+		moveEndX = e.originalEvent.changedTouches[0].pageX,
+		moveEndY = e.originalEvent.changedTouches[0].pageY,
+		X = moveEndX - startX,
+		Y = moveEndY - startY;
+
+		if ( X >= 30 && Math.abs(X) > Math.abs(Y) )
+			callback('right');
+		else if ( -X >= 30 && Math.abs(X) > Math.abs(Y) )
+			callback('left');
 	});
 	return this;
 }
