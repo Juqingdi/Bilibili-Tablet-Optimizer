@@ -129,12 +129,12 @@
          "run_at": "document_end"
       },
       {
-         "matches": [ "*://www.bilibili.com/anime/timeline*", "*://www.bilibili.com/anime/index*" ],
+         "matches": [ "*://www.bilibili.com/*/timeline*", "*://www.bilibili.com/anime/index*", "*://www.bilibili.com/guochuang/index*" ],
          "css": [ "css/timeline.css" ],
          "run_at": "document_start"
       },
       {
-         "matches": [ "*://www.bilibili.com/anime/timeline*", "*://www.bilibili.com/anime/index*" ],
+         "matches": [ "*://www.bilibili.com/*/timeline*", "*://www.bilibili.com/anime/index*", "*://www.bilibili.com/guochuang/index*" ],
          "js": [ "js/jquery.min.js", "js/common.js", "js/timeline.js" ],
          "run_at": "document_end"
       },

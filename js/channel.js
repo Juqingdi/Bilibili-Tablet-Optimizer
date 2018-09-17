@@ -16,6 +16,8 @@ function Main() {
 		AddCinemaTag(11);
 	else if(CheckChannelId([13,33,32,51,152]))
 		AddAnimeTag();
+	else if(CheckChannelId([167,153,168,169,170]))
+		AddGuochuangTag();
 }
 
 function CheckChannelId(channelId) {
@@ -56,6 +58,13 @@ function AddAnimeTag() {
 	$(".index__scrollContainer__src-partition-secondZone-").append(`
 		<a target="_blank" class="index__tab__src-partition-secondZone-tab-" href="//www.bilibili.com/anime/timeline/"><p>新番时间表</p></a>
 		<a target="_blank" class="index__tab__src-partition-secondZone-tab-" href="//www.bilibili.com/anime/index/"><p>番剧索引</p></a>
+		`);
+}
+
+function AddGuochuangTag() {
+	$(".index__scrollContainer__src-partition-secondZone-").append(`
+		<a target="_blank" class="index__tab__src-partition-secondZone-tab-" href="//www.bilibili.com/guochuang/timeline/"><p>新番时间表</p></a>
+		<a target="_blank" class="index__tab__src-partition-secondZone-tab-" href="//www.bilibili.com/guochuang/index/"><p>国产动画索引</p></a>
 		`);
 }
 
