@@ -8,6 +8,10 @@ function Main() {
 	SetSideMenu();
 	window.localStorage.b_miniplayer = '0';
 
+	$bofqi = $("#bofqi");
+	let $bilibiliPlayer = $("#bilibiliPlayer", $bofqi);
+	console.log($bofqi.prop('outerHTML'));
+
 	let currentNode;
 	let observer = new MutationObserver((records)=>{
 		records.forEach((record, index)=>{
@@ -32,34 +36,15 @@ function Main() {
 		'subtree': true
 	});
 
-	$(window).resize(function(e){
-		if($bofqiContainer == null)
-			return;
-		SetZoom();
-		if( !$bofqiContainer.hasClass('unzoomed')){
-			$bofqi.css({
-				'transform': `translate(${zoom.left}px, ${zoom.top}px)`
-			});
-		}
+	let bilibiliPlayerObserver = new MutationObserver((records)=>{
+		console.log(records);
+		if($bilibiliPlayer.hasClass('mode-miniscreen'))
+			$bilibiliPlayer.removeClass('mode-miniscreen');
 	});
-}
-
-function SetZoom(){
-	console.info(`${$bofqiContainer.width()},${window.innerWidth},${window.innerHeight}`);
-	zoom.scale = $bofqiContainer.width() / bofqiWidth;
-	zoom.left = (window.innerWidth - bofqiWidth) / 2 - 60;
-	zoom.top = (window.innerHeight - bofqiHeight) / 2;
-	console.info(zoom);
-}
-
-function ResetPlayer(){
-	let $bilibiliControls = $(".bilibili-player-video-control", $bofqi);
-	$("video", $bofqi).attr('controls', true).on('play', ()=>{
-		$bilibiliControls.hide();
-	}).on('pause', ()=>{
-		$bilibiliControls.show();
+	bilibiliPlayerObserver.observe($bilibiliPlayer[0], {
+		attributes: true,
+		attributeFilter: ['class']
 	});
-	// $(".bilibili-player-video-quality-menu", $bofqi).off('mouseover mouseenter click');
 }
 
 function Decorate() {
@@ -67,9 +52,7 @@ function Decorate() {
 	$container = $(`
 		<div id="BT-videopage">
 			<div class="l-con">
-				<div id="bofqi_container" class="container">
-					<div class="zoomin"></div>
-				</div>
+				<div id="bofqi_container" class="container"></div>
 				<div id="arc_toolbar_report_container" class="container"></div>
 				<div id="BT-info" class="container">
 					<div id="viewbox_report_container"></div>
@@ -94,61 +77,16 @@ function Decorate() {
 			</div>
 		</div>
 		`);
+
+	//播放器
 	$bofqi = $("#bofqi");
-	$bofqi.append($(`
-		<div class="player-functions">
-			<div class="zoomout"></div>
-			<a class="open-in-app" href="bilibili://video/${location.pathname.substring( location.pathname.indexOf('/av') + 3, location.pathname.lastIndexOf('/'))}">app中打开<span>推荐</span></a>
-		</div>
-		`));
-	// console.info($bofqi.prop('outerHTML'));
-	$(".bilibili-player-video-btn-start, .bilibili-player-video-progress, .bilibili-player-video-time, .bilibili-player-video-btn-volume, .bilibili-player-video-btn-widescreen, .bilibili-player-video-web-fullscreen, .icon-player-feedback, .bilibili-player-video-state", $bofqi).remove();
-	ResetPlayer();
-	let videoObserver = new MutationObserver((records)=>{
-		console.info(records);
-		if(records.length > 0 && records[0].addedNodes.length > 0)
-			ResetPlayer();
-	});
-	videoObserver.observe($(".bilibili-player-video", $bofqi)[0], {'childList': true});
-
-	/*let controlObserver = new MutationObserver((records)=>{
-		console.info(records);
-	});
-	controlObserver.observe($(".bilibili-player-video-control", $bofqi)[0], {
-		'childList': true,
-		'subtree': true
-	})*/
-	// bilibili-player-video-control
-
-
-
-
-
-
-	// 不知为何进不了全屏模式
-
-
-
-
-
-
-	/*$(".bilibili-player-video-btn-fullscreen", $bofqi).click((e)=>{
-		if(!$(e.currentTarget).hasClass('video-state-fullscreen-off')){
-		// if(!document.webkitIsFullScreen){
-		// if( !$('#bilibiliPlayer', $bofqi).hasClass('mode-fullscreen') ){
-			console.log('进入全屏');
-			document.documentElement.webkitRequestFullScreen();
-		}
-		else{
-			console.log('退出全屏');
-			document.webkitCancelFullScreen();
-		}
-	});*/
+	// console.log($bofqi.prop('outerHTML'));
 
 	//工具栏
 	let $toolbar = $("#arc_toolbar_report");
-	$(".more-ops-list li", $toolbar).eq(1).remove();
-	$(".more-ops-list li", $toolbar).eq(0).prepend('<div class="van-watchlater van-watchlater-icon"></div>');
+	$(".more-ops-list li", $toolbar).eq(1).prepend('<div class="van-watchlater van-watchlater-icon"></div>');
+	$(".more-ops-list li", $toolbar).eq(2).remove();
+	$(".more-ops-list li", $toolbar).eq(0).remove();
 	$(".more-ops-list", $toolbar).appendTo($(".ops", $toolbar));
 	$(".van-icon-general_moreactions, .app, .share", $toolbar).remove();
 
@@ -207,64 +145,9 @@ function Decorate() {
 	$("#reco_list").appendTo($('#reco_list_container', $container));
 
 	$bofqiContainer = $('#bofqi_container', $container);
-	$zoomIn = $(".zoomin", $bofqiContainer);
-	$zoomOut = $(".zoomout", $bofqiContainer);
 
 	$('body').append($container);
 	$bofqiContainer.height( $bofqiContainer.width() * 9 /16 );
-
-	$bofqi.on('transitionend', (e)=>{
-		if(e.currentTarget != e.target)
-			return;
-		if($bofqiContainer.hasClass('unzoomed')){
-			console.info('缩小后');
-			$bofqiContainer.css('overflow', 'hidden');
-			$bofqi.css({
-				'transition': 'none',
-				'transform': 'none',
-				'zoom': zoom.scale
-			});
-		}
-		else{
-			console.log('放大后');
-			// $('body').css('overflow','hidden');
-			$bofqi.css({
-				'position': 'fixed',
-				'left': 60
-			})
-		}
-	});
-
-	SetZoom();
-
-	PlayerZoomOut();
-
-	$zoomIn.click( PlayerZoomIn);
-	$zoomOut.click( PlayerZoomOut);
-}
-
-//播放器缩小
-function PlayerZoomOut() {
-	$bofqiContainer.addClass('unzoomed');
-	$bofqi.css({
-		'transform': `scale(${zoom.scale})`,
-		'position': 'absolute',
-		'left': 0
-	});
-}
-//播放器放大
-function PlayerZoomIn() {
-	$bofqiContainer.removeClass('unzoomed').css('overflow', 'unset');
-	$bofqi.css({
-		'zoom': 1,
-		'transform': `scale(${zoom.scale})`
-	});
-	setTimeout(()=>{
-		$bofqi.css({
-			'transition': 'transform 0.5s ease',
-			'transform': `translate(${zoom.left}px, ${zoom.top}px)`,
-		});
-	}, 1);
 }
 
 if(true)

@@ -43,27 +43,21 @@
     padding: 8px;
 }
 #bofqi {
+    /*position: fixed !important;*/
     top: 0;
-    left: 0;
+    left: 60px;
     transform-origin: top left;
     margin-left: 0;
     height: 396px;
 }
+#bofqi .bilibili-player .bilibili-player-area.video-state-pause .bilibili-player-video-control-mask,
+#bofqi .bilibili-player .bilibili-player-area.video-state-pause .bilibili-player-video-wrap .bilibili-player-video-control-wrap{
+    visibility: visible;
+    opacity: 1;
+}
 #bofqi_container {
     position: relative;
     overflow: hidden;
-}
-#bofqi_container .zoomin{
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 233;
-}
-#bofqi_container.unzoomed .zoomin{
-    display: block;
 }
 #bofqi_container .player-functions{
     position: absolute;
@@ -77,110 +71,7 @@
     border-bottom-right-radius: 4px;
     border-top-right-radius: 4px;
 }
-#bofqi_container .zoomout{
-    width: 100%;
-    height: 55px;
-    /*background: url(https://static.hdslb.com/images/base/icons.png) -460px -1676px no-repeat;*/
-    background: url(https://static.hdslb.com/images/base/icons.png) -527px -1670px no-repeat;
-    border-bottom: solid 1px #00a1d6;
-}
-#bofqi_container .open-in-app{
-    display: block;
-    font-size: 16px;
-    text-align: center;
-    padding: 5px;
-    line-height: 1.2;
-}
-#bofqi_container .open-in-app > span{
-    font-size: smaller;
-    font-style: italic;
-    color: #00a1d6;
-}
-#bofqi .bilibili-player-context-menu-container, #bofqi .bilibili-player-video-btn-setting-panel-player-choose{
-    display: none;
-}
-#bofqi .bilibili-player-video-btn-setting-panel, #bofqi .bilibili-player-video-danmaku-setting-wrap{
-    /*margin-left: -32px;*/
-}
-#bofqi video::-webkit-media-controls-fullscreen-button{
-    display: none;
-}
-/*#bofqi video{
-    z-index: auto !important;
-}
-#bofqi .bilibili-player .bilibili-player-area .bilibili-player-video-wrap .bilibili-player-video{
-    z-index: 10 !important;
-}*/
-#bofqi .bilibili-player-video-control{
-    position: absolute;
-    bottom: 86px;
-    right: 0;
-    width: auto;
-    height: 48px;
-    background-color: rgba(34,34,34, 0.9);
-    /*opacity: 0.9;*/
-    border: none;
-    /*display: none;*/
-}
-#bofqi .bilibili-player.mode-fullscreen .bilibili-player-video-control{
-    bottom: 48px;
-}
-#bofqi .bilibili-player .bilibili-player-area .bilibili-player-video-control .bilibili-player-video-btn, #bofqi .bilibili-player .bilibili-player-area .bilibili-player-video-control .bilibili-player-video-btn:hover{
-    color: #ccc;
-    width: 48px;
-    background-color: unset;
-}
-#bofqi .bilibili-player .bilibili-player-area .bilibili-player-video-control .bilibili-player-video-btn.bilibili-player-video-btn-quality{
-    width: 80px;
-    line-height: 48px;
-}
-#bofqi .bilibili-player .bilibili-player-area .bilibili-player-video-control > div{
-    height: 48px;
-    line-height: 48px;
-}
-#bofqi .bilibili-player .bilibili-player-area .bilibili-player-video-control > div i{
-    font-size: 32px;
-}
-#bofqi .bilibili-player .bilibili-player-area .bilibili-player-video-control .bilibili-player-video-btn .bilibili-player-iconfont, #bofqi .bilibili-player .bilibili-player-area .bilibili-player-video-control .bilibili-player-video-btn:hover .bilibili-player-iconfont{
-    color: #ccc;
-}
-#bofqi .bilibili-player .bilibili-player-area .bilibili-player-video-control .bilibili-player-video-btn.bilibili-player-video-btn-quality .bpui-selectmenu .bpui-selectmenu-txt{
-    font-size: 20px;
-    line-height: 48px;
-}
-#bofqi .bilibili-player .bilibili-player-area .bilibili-player-video-control .bilibili-player-video-btn.bilibili-player-video-btn-quality .bpui-selectmenu .bpui-selectmenu-list{
-    bottom: 48px;
-    border-radius: 4px;
-}
-#bofqi .bilibili-player .bilibili-player-area .bilibili-player-video-control .bilibili-player-video-btn.bilibili-player-video-btn-quality .bpui-selectmenu .bpui-selectmenu-list-row{
-    height: 37px;
-    font-size: 15px;
-}
-#bofqi .bilibili-player-video-control .bilibili-player-video-btn-setting-panel{
-    bottom: 48px;
-    border-radius: 4px;
-}
 
-/*.video-toolbar .ops .more{
-    margin-right: 0 !important;
-    width: 0 !important;
-}
-.more-ops-list{
-    display: inline-block !important;
-    width: auto;
-    position: static !important;
-    padding: 0 !important;
-    background: none !important;
-    box-shadow: none !important;
-    border: none !important;
-}
-#arc_toolbar_report_container .van-watchlater-icon{
-    position: static;
-    display: inline-block;
-    width: 28px;
-    height: 28px;
-    background-size: 28px 28px;
-}*/
 #arc_toolbar_report_container .video-toolbar{
     padding: 7px 17px;
     border-bottom: none;
@@ -246,7 +137,7 @@
 
 #v_desc.video-desc .info{
     display: -webkit-box;
-    height: 22px;
+    height: 18px;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     flex-shrink: 1;
