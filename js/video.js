@@ -1,4 +1,4 @@
-const bofqiWidth = 637, bofqiHeight = 396;
+const bofqiWidth = 638, bofqiHeight = 396;
 let $bofqiContainer, $bofqi, $zoomIn, $zoomOut;
 let zoom = {};
 
@@ -12,32 +12,23 @@ function Main() {
 	let $bilibiliPlayer = $("#bilibiliPlayer", $bofqi);
 	console.log($bofqi.prop('outerHTML'));
 
-	let currentNode;
 	let observer = new MutationObserver((records)=>{
-		records.forEach((record, index)=>{
-			if(record.addedNodes.length > 0 && record.addedNodes[0].tagName === 'SCRIPT'){
-				currentNode = record.addedNodes[0];
-				if(currentNode.src.indexOf('//api.bilibili.com/x/web-show/res/locs') > 0){
-				// if(currentNode.src.indexOf('//api.vc.bilibili.com/dynamic_svr/v1/dynamic_svr/dynamic_num') > 0){
-					$("#app .float-nav, #entryOld").remove();
-					RemoveHeader();
-					// $("#danmukuBox").remove(); //删掉的话切换分P会没弹幕
-					$("#live_recommand_report").remove();
-					$("#slide_ad").remove();
-					// $("#app").remove();
-					Decorate();
-					observer.disconnect();
-				}
-			}
-		});
+		$("#app .float-nav, #entryOld").remove();
+		RemoveHeader();
+		// $("#danmukuBox").remove(); //删掉的话切换分P会没弹幕
+		$("#live_recommand_report").remove();
+		$("#slide_ad").remove();
+		// $("#app").remove();
+		Decorate();
+		observer.disconnect();
 	});
-	observer.observe(document, {
+	observer.observe($("#reco_list")[0], {
 		'childList': true,
 		'subtree': true
 	});
 
 	let bilibiliPlayerObserver = new MutationObserver((records)=>{
-		console.log(records);
+		let $bilibiliPlayer = $("#bilibiliPlayer", $bofqi);
 		if($bilibiliPlayer.hasClass('mode-miniscreen'))
 			$bilibiliPlayer.removeClass('mode-miniscreen');
 	});
@@ -52,7 +43,10 @@ function Decorate() {
 	$container = $(`
 		<div id="BT-videopage">
 			<div class="l-con">
-				<div id="bofqi_container" class="container"></div>
+				<div id="bofqi_container" class="container">
+					<div class="popout"></div>
+					<div class="popin"></div>
+				</div>
 				<div id="arc_toolbar_report_container" class="container"></div>
 				<div id="BT-info" class="container">
 					<div id="viewbox_report_container"></div>
@@ -80,7 +74,6 @@ function Decorate() {
 
 	//播放器
 	$bofqi = $("#bofqi");
-	// console.log($bofqi.prop('outerHTML'));
 
 	//工具栏
 	let $toolbar = $("#arc_toolbar_report");
@@ -147,7 +140,32 @@ function Decorate() {
 	$bofqiContainer = $('#bofqi_container', $container);
 
 	$('body').append($container);
-	$bofqiContainer.height( $bofqiContainer.width() * 9 /16 );
+
+	//计算播放器容器高度，宽度足够时显示完整播放器，否则遮挡住弹幕输入框
+	if( $bofqiContainer.width() < 638){
+		$bofqiContainer.addClass('small-player');
+		let bofqiContainerWidth = $bofqiContainer.width();
+		$bofqiContainer.height( bofqiContainerWidth * 9 /16 );
+		let scale = bofqiContainerWidth / bofqiWidth;
+		$bofqi.css('zoom', scale);
+
+		let $popout = $(".popout", $bofqiContainer);
+		$popout.click(()=>{
+			$bofqi.css({
+				'zoom': 1,
+				'position': 'fixed',
+				'transform': `scale(${scale})`
+			});
+			setTimeout(() => {
+				$bofqi.css({
+					'transition': 'transform 0.5s',
+					'transform': 'none'
+				});
+			}, 0);
+		});
+	}
+	else
+		$bofqiContainer.height( 405);
 }
 
 if(true)

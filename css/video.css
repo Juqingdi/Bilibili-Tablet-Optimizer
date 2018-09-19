@@ -27,8 +27,10 @@
 #BT-videopage .l-con{
     box-sizing: border-box;
     width: 60%;
+    max-width: 646px; /*播放器宽638, 右内边距8*/
     padding-right: 8px;
     overflow: auto;
+    margin-left: auto;
 }
 #BT-videopage .r-con{
     box-sizing: border-box;
@@ -36,6 +38,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    margin-right: auto;
 }
 #BT-videopage .container{
     margin-bottom: 8px;
@@ -58,6 +61,21 @@
 #bofqi_container {
     position: relative;
     overflow: hidden;
+}
+#BT-videopage #bofqi_container{
+    padding: 0;
+}
+#bofqi_container .popout{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 70;
+}
+#bofqi_container.small-player .popout{
+    display: block;
 }
 #bofqi_container .player-functions{
     position: absolute;
