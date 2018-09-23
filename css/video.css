@@ -45,13 +45,10 @@
     background-color: #fff;
     padding: 8px;
 }
+
 #bofqi {
-    /*position: fixed !important;*/
-    top: 0;
-    left: 60px;
-    transform-origin: top left;
-    margin-left: 0;
-    height: 396px;
+    width: 638px !important;
+    height: 405px !important;
 }
 #bofqi .bilibili-player .bilibili-player-area.video-state-pause .bilibili-player-video-control-mask,
 #bofqi .bilibili-player .bilibili-player-area.video-state-pause .bilibili-player-video-wrap .bilibili-player-video-control-wrap{
@@ -61,6 +58,17 @@
 #bofqi_container {
     position: relative;
     overflow: hidden;
+}
+#bofqi_container .pop-panel{
+    left: 0;
+    z-index: 100;
+    transform-origin: top left;
+}
+#bofqi_container .pop-panel.poped{
+    box-shadow: 0px 0px 5px 0px #000;
+}
+#bofqi_container .pop-panel.fixed{
+    position: fixed;
 }
 #BT-videopage #bofqi_container{
     padding: 0;
@@ -76,6 +84,37 @@
 }
 #bofqi_container.small-player .popout{
     display: block;
+}
+#bofqi_container.small-player .pop-panel.poped .popout{
+    display: none;
+}
+#bofqi_container .popin{
+    display: none;
+    position: absolute;
+    width: 36px;
+    height: 70px;
+    left: 100%;
+    top: 0;
+    /*background: url(https://static.hdslb.com/images/base/icons.png) -529px -1677px no-repeat;*/
+    background: url(https://static.hdslb.com/images/base/icons.png) -1232px -893px no-repeat;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #00a1d6;
+    box-shadow: 0px 0px 5px 0px #000000;
+}
+#bofqi_container.small-player .pop-panel.poped .popin{
+    display: block;
+}
+#bofqi_container .bilibili-player .bilibili-player-area .bilibili-player-video-wrap .bilibili-player-video-top-issue,
+#bofqi_container .bilibili-player .bilibili-player-area .bilibili-player-video-control .bilibili-player-video-btn-widescreen,
+#bofqi_container .bilibili-player .bilibili-player-area .bilibili-player-video-control .bilibili-player-video-web-fullscreen,
+#bofqi_container .bilibili-player-video-volumebar-wrp,
+#bofqi_container .bilibili-player-video-control .bilibili-player-video-btn-setting-panel .bilibili-player-video-btn-setting-panel-player-choose{
+    display: none;
+}
+#bofqi_container .bilibili-player-video-control .bilibili-player-video-btn-setting-panel{
+    height: 244px;
+    right: -73px;
 }
 #bofqi_container .player-functions{
     position: absolute;

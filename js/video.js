@@ -10,7 +10,7 @@ function Main() {
 
 	$bofqi = $("#bofqi");
 	let $bilibiliPlayer = $("#bilibiliPlayer", $bofqi);
-	console.log($bofqi.prop('outerHTML'));
+	// console.log($bofqi.prop('outerHTML'));
 
 	let observer = new MutationObserver((records)=>{
 		$("#app .float-nav, #entryOld").remove();
@@ -44,8 +44,10 @@ function Decorate() {
 		<div id="BT-videopage">
 			<div class="l-con">
 				<div id="bofqi_container" class="container">
-					<div class="popout"></div>
-					<div class="popin"></div>
+					<div class="pop-panel">
+						<div class="popout"></div>
+						<div class="popin"></div>
+					</div>
 				</div>
 				<div id="arc_toolbar_report_container" class="container"></div>
 				<div id="BT-info" class="container">
@@ -110,7 +112,7 @@ function Decorate() {
 	let ShowComment = function(){
 		$commentRecoScroll.css('transform', 'translateX(0%)');
 		$switchTag.addClass('comment-active').removeClass('reco-active');
-		$(".comment-total", $switchTag).text( $("#comment .b-head .results", $container).text());
+		// $(".comment-total", $switchTag).text( $("#comment .b-head .results", $container).text());
 	}
 	let ShowRecoList = function(){
 		$commentRecoScroll.css('transform', 'translateX(-50%)');
@@ -125,8 +127,18 @@ function Decorate() {
 		else if(direction === 'right')
 			ShowComment();
 	});
+	//切换视频时评论数清零
+	// console.log($("#comment .b-head .results"));
+	let titleObserver = new MutationObserver((records)=>{
+		// console.warn(records);
+		$(".comment-total", $switchTag).text( $("#comment .b-head .results", $container).text());
+	});
+	titleObserver.observe($("#comment .b-head .results")[0], {
+		characterData: true,
+		childList: true
+	});
 
-	$("#bofqi").prependTo($('#bofqi_container', $container));
+	$("#bofqi").prependTo($('#bofqi_container .pop-panel', $container));
 	$viewboxReport.appendTo($("#viewbox_report_container", $container));
 	// console.log($("#arc_toolbar_report").prop('outerHTML'));
 	$toolbar.appendTo($('#arc_toolbar_report_container', $container));
@@ -146,22 +158,39 @@ function Decorate() {
 		$bofqiContainer.addClass('small-player');
 		let bofqiContainerWidth = $bofqiContainer.width();
 		$bofqiContainer.height( bofqiContainerWidth * 9 /16 );
+		let $bofqiPanel = $(".pop-panel", $bofqiContainer);
 		let scale = bofqiContainerWidth / bofqiWidth;
-		$bofqi.css('zoom', scale);
+		$bofqiPanel.css('zoom', scale);
 
 		let $popout = $(".popout", $bofqiContainer);
+		let $popin = $(".popin", $bofqiContainer);
 		$popout.click(()=>{
-			$bofqi.css({
-				'zoom': 1,
+			$bofqiPanel.addClass('poped');
+			$bofqiPanel.css({
 				'position': 'fixed',
-				'transform': `scale(${scale})`
+				'transform': `scale(${scale}) translate(${60 / scale}px, ${$bofqiContainer.offset().top / scale}px)`,
+				'zoom': 0
 			});
 			setTimeout(() => {
-				$bofqi.css({
-					'transition': 'transform 0.5s',
-					'transform': 'none'
+				$bofqiPanel.css({
+					'transform': 'translate( calc(50vw - 50%), calc(50vh - 50%) )',
+				    'transition': 'transform 0.5s'
 				});
 			}, 0);
+		});
+		$popin.click(()=>{
+			$bofqiPanel.removeClass('poped');
+			$bofqiPanel.css({
+				'transform': `scale(${scale}) translate(${60 / scale}px, ${$bofqiContainer.offset().top / scale}px)`,
+			});
+			setTimeout(() => {
+				$bofqiPanel.css({
+					'transform': 'none',
+				    'transition': 'none',
+				    'position': 'static',
+				    'zoom': scale
+				});
+			}, 500);
 		});
 	}
 	else
