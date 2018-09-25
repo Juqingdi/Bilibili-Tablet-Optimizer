@@ -50,24 +50,7 @@ function CreateFramework() {
 					<div class="popin"></div>
 				</div>
 			</div>
-			<div id="arc_toolbar_report_container" class="container">
-				<div id="arc_toolbar_report" class="video-toolbar report-wrap-module report-scroll-module">
-					<div class="ops">
-						<span class="like"><i class="van-icon-videodetails_like"></i>--</span>
-						<span class="coin"><i class="van-icon-videodetails_throw"></i>--</span>
-						<span class="collect"><i class="van-icon-videodetails_collec"></i>--</span>
-						<div class="more-ops-list">
-							<ul>
-								<li>
-									<div class="van-watchlater van-watchlater-icon"></div>
-									<div class="ops-watch-later van-watchlater"></div>
-									稍后再看
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
+			<div id="arc_toolbar_report_container" class="container"></div>
 			<div id="BT-info" class="container">
 				<div id="viewbox_report_container"></div>
 				<div id="v_desc_container"></div>
@@ -89,6 +72,7 @@ function CreateFramework() {
 				</div>
 			</div>
 		</div>
+		<div class="video-page-mask"></div>
 	</div>
 	`);
 	$('body').append($container);
@@ -143,6 +127,7 @@ function CreateFramework() {
 }
 
 function Decorate() {
+	$(".video-page-mask", $container).remove();
 
 	//播放器
 	$bofqi = $("#bofqi");
@@ -202,7 +187,7 @@ function Decorate() {
 	$("#bofqi").prependTo($('#bofqi_container .pop-panel', $container));
 	$viewboxReport.appendTo($("#viewbox_report_container", $container));
 	// console.log($("#arc_toolbar_report").prop('outerHTML'));
-	$("#arc_toolbar_report_container", $container).empty().append( $toolbar);
+	$("#arc_toolbar_report_container", $container).append( $toolbar);
 	$("#v_tag").appendTo($('#v_tag_container', $container));
 	$("#v_desc").appendTo($('#v_desc_container', $container));
 	$("#comment").appendTo($('#comment_container', $container));
@@ -214,6 +199,7 @@ function Decorate() {
 	let titleObserver = new MutationObserver((records)=>{
 		$(".comment-total", $switchTag).text( $("#comment .b-head .results", $container).text());
 		$recoListContainer.scrollTop(0);
+		$('.l-con', $container).scrollTop(0);
 		$btInfo.removeClass('more-info');
 	});
 	titleObserver.observe($("#comment .b-head .results")[0], {

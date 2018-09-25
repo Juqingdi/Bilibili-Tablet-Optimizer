@@ -1,8 +1,16 @@
 .bili-header-m,
 .z-top-container,
 #slide_ad,
-#app .v-wrap > * {
+#app .v-wrap > *:not(.l-con),
+#app .v-wrap .l-con > * {
 	display: none;
+}
+#app .v-wrap .l-con #playerWrap{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 60px;
+    z-index: 1;
 }
 #app{
     /*display: none;*/
@@ -41,6 +49,14 @@
     margin-bottom: 8px;
     background-color: #fff;
     padding: 8px;
+}
+#BT-videopage .video-page-mask{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 70;
 }
 
 #bofqi {
