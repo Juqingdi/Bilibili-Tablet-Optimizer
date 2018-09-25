@@ -179,21 +179,24 @@ function Decorate() {
 			}, 0);
 		});
 
-		//把下面改成事件触发式的
 		$popin.click(()=>{
 			$bofqiPanel.removeClass('poped');
 			$bofqiPanel.css({
 				'transform': `scale(${scale}) translate(${60 / scale}px, ${$bofqiContainer.offset().top / scale}px)`,
 			});
-			setTimeout(() => {
+		});
+		$bofqiPanel.on('transitionend', (e)=>{
+			if(e.currentTarget != e.target)
+				return;
+			if(!$bofqiPanel.hasClass('poped')){
 				$bofqiPanel.css({
 					'transform': 'none',
 				    'transition': 'none',
 				    'position': 'static',
 				    'zoom': scale
 				});
-			}, 500);
-		});
+			}
+		})
 	}
 	else
 		$bofqiContainer.height( 405);
