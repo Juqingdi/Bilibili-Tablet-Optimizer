@@ -76,6 +76,7 @@ function Decorate() {
 
 	//播放器
 	$bofqi = $("#bofqi");
+	$recoListContainer = $("#reco_list_container", $container);
 
 	//工具栏
 	let $toolbar = $("#arc_toolbar_report");
@@ -127,16 +128,6 @@ function Decorate() {
 		else if(direction === 'right')
 			ShowComment();
 	});
-	//切换视频时评论数清零
-	// console.log($("#comment .b-head .results"));
-	let titleObserver = new MutationObserver((records)=>{
-		// console.warn(records);
-		$(".comment-total", $switchTag).text( $("#comment .b-head .results", $container).text());
-	});
-	titleObserver.observe($("#comment .b-head .results")[0], {
-		characterData: true,
-		childList: true
-	});
 
 	$("#bofqi").prependTo($('#bofqi_container .pop-panel', $container));
 	$viewboxReport.appendTo($("#viewbox_report_container", $container));
@@ -147,7 +138,7 @@ function Decorate() {
 	$("#comment").appendTo($('#comment_container', $container));
 	$("#v_upinfo").appendTo($('#v_upinfo_container', $container));
 	$("#multi_page").appendTo($('#multi_page_container', $container));
-	$("#reco_list").appendTo($('#reco_list_container', $container));
+	$("#reco_list").appendTo($recoListContainer);
 
 	$bofqiContainer = $('#bofqi_container', $container);
 
@@ -199,7 +190,18 @@ function Decorate() {
 		})
 	}
 	else
-		$bofqiContainer.height( 405);
+		$bofqiContainer.height( bofqiHeight);
+
+	//切换视频时，评论数清零，相关视频复位，视频信息收起 
+	let titleObserver = new MutationObserver((records)=>{
+		$(".comment-total", $switchTag).text( $("#comment .b-head .results", $container).text());
+		$recoListContainer.scrollTop(0);
+		$btInfo.removeClass('more-info');
+	});
+	titleObserver.observe($("#comment .b-head .results")[0], {
+		characterData: true,
+		childList: true
+	});
 }
 
 if(true)
