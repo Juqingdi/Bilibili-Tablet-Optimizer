@@ -1,16 +1,13 @@
-.bili-header-m{
-	display: none;
-}
-#slide_ad {
+.bili-header-m,
+.z-top-container,
+#slide_ad,
+#app .v-wrap > * {
 	display: none;
 }
 #app{
     /*display: none;*/
     height: 0;
     overflow: hidden;
-}
-#app .v-wrap > * {
-    display: none;
 }
 #app .v-wrap > .bili-dialog-m{
     display: block;

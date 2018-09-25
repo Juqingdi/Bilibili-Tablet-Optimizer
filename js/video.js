@@ -13,11 +13,9 @@ function Main() {
 	// console.log($bofqi.prop('outerHTML'));
 
 	let observer = new MutationObserver((records)=>{
-		$("#app .float-nav, #entryOld").remove();
+		$("#app .float-nav, #entryOld, #live_recommand_report, #slide_ad").remove();
 		RemoveHeader();
 		// $("#danmukuBox").remove(); //删掉的话切换分P会没弹幕
-		$("#live_recommand_report").remove();
-		$("#slide_ad").remove();
 		// $("#app").remove();
 		Decorate();
 		observer.disconnect();
@@ -145,7 +143,7 @@ function Decorate() {
 	$('body').append($container);
 
 	//计算播放器容器高度，宽度足够时显示完整播放器，否则遮挡住弹幕输入框
-	if( $bofqiContainer.width() < 638){
+	if( $bofqiContainer.width() < bofqiWidth){
 		$bofqiContainer.addClass('small-player');
 		let bofqiContainerWidth = $bofqiContainer.width();
 		$bofqiContainer.height( bofqiContainerWidth * 9 /16 );
@@ -172,9 +170,7 @@ function Decorate() {
 
 		$popin.click(()=>{
 			$bofqiPanel.removeClass('poped');
-			$bofqiPanel.css({
-				'transform': `scale(${scale}) translate(${60 / scale}px, ${$bofqiContainer.offset().top / scale}px)`,
-			});
+			$bofqiPanel.css('transform', `scale(${scale}) translate(${60 / scale}px, ${$bofqiContainer.offset().top / scale}px)`);
 		});
 		$bofqiPanel.on('transitionend', (e)=>{
 			if(e.currentTarget != e.target)
