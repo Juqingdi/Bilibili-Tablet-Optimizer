@@ -164,7 +164,7 @@ function Decorate() {
 			});
 			setTimeout(() => {
 				$bofqiPanel.css({
-					'transform': `translate( ${(document.body.clientWidth - bofqiWidth) / 2}px, ${(document.body.clientHeight - bofqiHeight) / 2}px )`,
+					'transform': `translate( ${(window.innerWidth - bofqiWidth) / 2}px, ${(window.innerHeight - bofqiHeight) / 2}px )`,
 				    'transition': 'transform 0.5s'
 				});
 			}, 0);
