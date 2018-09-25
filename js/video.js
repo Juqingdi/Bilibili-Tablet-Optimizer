@@ -202,7 +202,8 @@ function Decorate() {
 		$('.l-con', $container).scrollTop(0);
 		$btInfo.removeClass('more-info');
 	});
-	titleObserver.observe($("#comment .b-head .results")[0], {
+	// titleObserver.observe($("#comment .b-head .results")[0], {
+	titleObserver.observe($("#viewbox_report .video-title .tit", $container)[0], {
 		characterData: true,
 		childList: true
 	});
