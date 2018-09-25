@@ -1,4 +1,4 @@
-const bofqiWidth = 638, bofqiHeight = 396;
+const bofqiWidth = 638, bofqiHeight = 405;
 let $bofqiContainer, $bofqi, $zoomIn, $zoomOut;
 let zoom = {};
 
@@ -173,11 +173,13 @@ function Decorate() {
 			});
 			setTimeout(() => {
 				$bofqiPanel.css({
-					'transform': 'translate( calc(50vw - 50%), calc(50vh - 50%) )',
+					'transform': `translate( ${(document.body.clientWidth - bofqiWidth) / 2}px, ${(document.body.clientHeight - bofqiHeight) / 2}px )`,
 				    'transition': 'transform 0.5s'
 				});
 			}, 0);
 		});
+
+		//把下面改成事件触发式的
 		$popin.click(()=>{
 			$bofqiPanel.removeClass('poped');
 			$bofqiPanel.css({
