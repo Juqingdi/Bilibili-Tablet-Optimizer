@@ -129,6 +129,9 @@
     border-top-right-radius: 4px;
 }
 
+#BT-videopage #arc_toolbar_report_container{
+    padding: 3px 8px;
+}
 #arc_toolbar_report_container .video-toolbar{
     padding: 7px 17px;
     border-bottom: none;
