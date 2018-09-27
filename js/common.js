@@ -89,7 +89,7 @@ function SetSideMenu( current = -1) {
 	// if(localStorage.time_tracker)
 		// userid = localStorage.time_tracker.substr( localStorage.time_tracker.indexOf('{') + 2, localStorage.time_tracker.indexOf(':') - 3 );
 	userid = getCookie('DedeUserID');		
-	console.log('userid:', userid);
+	// console.warn(userid);
 	$sideMenu = $((`
 		<div id="BT-sidemenu">
 			<ul class="submenu submenu1">
@@ -113,6 +113,8 @@ function SetSideMenu( current = -1) {
 					<a href="//search.bilibili.com"></a>
 				</li>
 			</ul>
+			${(()=>{
+			if(userid) return `
 			<ul class="submenu submenu2">
 				<li class="my">
 					<i class="BT-iconfont icon-my"></i>
@@ -123,7 +125,20 @@ function SetSideMenu( current = -1) {
 					<p>历史</p>
 					<a href="//www.bilibili.com/account/history"></a>
 				</li>
-			</ul>
+			</ul>`;
+			else return `
+			<ul class="submenu submenu2">
+				<li class="my">
+					<i class="BT-iconfont icon-my"></i>
+					<p>我的</p>
+					<a href="//passport.bilibili.com/login"></a>
+				</li>
+				<li>
+					<i class="BT-iconfont icon-history"></i>
+					<p>插件说明</p>
+				</li>
+			</ul>`;
+			})()}
 			<ul class="popup popup-channels">
 				<li>
 					<i class="douga"></i>
@@ -196,6 +211,8 @@ function SetSideMenu( current = -1) {
 					<a href="//m.bilibili.com/channel/23.html"></a>
 				</li>
 			</ul>
+			${(()=>{
+				if(userid) return `
 			<ul class="popup popup-my">
 				<li>
 					<a target="_blank" href="//account.bilibili.com/account/home">个人中心</a>
@@ -228,11 +245,13 @@ function SetSideMenu( current = -1) {
 				<li>
 					<a href="javascript:;">插件说明</a>
 				</li>
-			</ul>
+			</ul>`;
+			else return '';
+			})()}
 		</div>
 		`).trim());
 	$menus = $("ul.submenu1 li, ul.submenu2 li", $sideMenu);
-	console.log($menus);
+	// console.log($menus);
 	$popups = $("ul.popup", $sideMenu);
 
 	status.current = current;
@@ -242,11 +261,13 @@ function SetSideMenu( current = -1) {
 		status.active = (status.active !== 'channels') ? 'channels' : 'none';
 		SyncStatus();
 	});
-	$("ul.submenu2 li.my", $sideMenu).on('touchstart', (e)=>{
-		e.stopPropagation();
-		status.active = (status.active !== 'my') ? 'my' : 'none';
-		SyncStatus();
-	});
+	if(userid){
+		$("ul.submenu2 li.my", $sideMenu).on('touchstart', (e)=>{
+			e.stopPropagation();
+			status.active = (status.active !== 'my') ? 'my' : 'none';
+			SyncStatus();
+		});
+	}
 	$popups.on('touchstart', (e)=>{
 		e.stopPropagation();
 	});
