@@ -1,8 +1,10 @@
 {
 
 
-   // "todo": "动态页视频预览、稍后再看隐藏"
-   // "todo": "动态更新失效了"
+   // todo: "动态页视频预览、稍后再看隐藏"
+   // todo: "动态更新失效了"
+   // todo: exclude_matches在平板上不起作用 
+   // todo: 删掉专栏文章右侧的按钮，挡视野
 
 
    "manifest_version": 2,
@@ -16,6 +18,7 @@
    "content_scripts": [
       {
          "matches": [ "*://*.bilibili.com/*" ],
+         "exclude_matches": [ "*://passport.bilibili.com/*" ],
          "js": [ "js/useragent.js" ],
          "css": [ "css/common.css" ],
          "run_at": "document_start"

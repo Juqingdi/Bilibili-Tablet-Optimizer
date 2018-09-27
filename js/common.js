@@ -280,7 +280,7 @@ function SetSideMenu( current = -1) {
 }
 
 function SyncStatus() {
-	console.log(status);
+	// console.log(status);
 	// console.log($("ul.submenu1 li"), $sideMenu);
 	$menus.each((index, ele)=>{
 		if(index === status.current)
