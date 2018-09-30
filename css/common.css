@@ -27,6 +27,8 @@
 #BT-sidemenu .current .icon-discovery:before { content: "\e667"; }
 #BT-sidemenu .icon-history:before { content: "\e671"; }
 #BT-sidemenu .current .icon-history:before { content: "\e671"; }
+#BT-sidemenu .icon-app:before { content: "\e668"; }
+#BT-sidemenu .current .icon-app:before { content: "\e668"; }
 
 #BT-sidemenu {
 	position: fixed;

@@ -82,9 +82,13 @@ function getCookie(name){
 			return arr[1]; 
 	} 
 	return ""; 
-} 
+}
 
-function SetSideMenu( current = -1) {
+function If_Html(statement, html1, html2 = '') {
+	return statement ? html1: html2;
+}
+
+function SetSideMenu( current = -1, schemeUrl = '') {
 	let userid = '';
 	// if(localStorage.time_tracker)
 		// userid = localStorage.time_tracker.substr( localStorage.time_tracker.indexOf('{') + 2, localStorage.time_tracker.indexOf(':') - 3 );
@@ -113,8 +117,7 @@ function SetSideMenu( current = -1) {
 					<a href="//search.bilibili.com"></a>
 				</li>
 			</ul>
-			${(()=>{
-			if(userid) return `
+			${If_Html(userid, `
 			<ul class="submenu submenu2">
 				<li class="my">
 					<i class="BT-iconfont icon-my"></i>
@@ -124,9 +127,7 @@ function SetSideMenu( current = -1) {
 					<i class="BT-iconfont icon-history"></i>
 					<p>历史</p>
 					<a href="//www.bilibili.com/account/history"></a>
-				</li>
-			</ul>`;
-			else return `
+				</li>`, `
 			<ul class="submenu submenu2">
 				<li class="my">
 					<i class="BT-iconfont icon-my"></i>
@@ -136,9 +137,14 @@ function SetSideMenu( current = -1) {
 				<li>
 					<i class="BT-iconfont icon-history"></i>
 					<p>插件说明</p>
-				</li>
-			</ul>`;
-			})()}
+				</li>`)}
+			${If_Html( schemeUrl !== '', `
+				<li class="open-in-app">
+					<i class="BT-iconfont icon-app"></i>
+					<p>App内打开</p>
+					<a href="bilibili://${schemeUrl}"></a>
+				</li>`)}
+			</ul>
 			<ul class="popup popup-channels">
 				<li>
 					<i class="douga"></i>
@@ -211,8 +217,7 @@ function SetSideMenu( current = -1) {
 					<a href="//m.bilibili.com/channel/23.html"></a>
 				</li>
 			</ul>
-			${(()=>{
-				if(userid) return `
+			${If_Html(userid, `
 			<ul class="popup popup-my">
 				<li>
 					<a target="_blank" href="//account.bilibili.com/account/home">个人中心</a>
@@ -245,9 +250,7 @@ function SetSideMenu( current = -1) {
 				<li>
 					<a href="javascript:;">插件说明</a>
 				</li>
-			</ul>`;
-			else return '';
-			})()}
+			</ul>`)}
 		</div>
 		`).trim());
 	$menus = $("ul.submenu1 li, ul.submenu2 li", $sideMenu);

@@ -5,7 +5,7 @@ let zoom = {};
 function Main() {
 	$('<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">').prependTo($("head"));
 
-	SetSideMenu();
+	SetSideMenu(-1, `video/${GetVideoId()}`);
 	window.localStorage.b_miniplayer = '0';
 
 	$bofqi = $("#bofqi");
@@ -38,8 +38,12 @@ function Main() {
 	});
 }
 
+function GetVideoId() {
+	return location.pathname.split('/')[2].substr(2);
+}
+
 function CreateFramework() {
-	console.info($('#v_desc').prop('innerHTML'));
+	// console.info($('#v_desc').prop('innerHTML'));
 
 	$container = $(`
 	<div id="BT-videopage">
@@ -195,12 +199,14 @@ function Decorate() {
 	$("#multi_page").appendTo($('#multi_page_container', $container));
 	$("#reco_list").appendTo($recoListContainer);
 
-	//切换视频时，评论数清零，相关视频复位，视频信息收起 
+	//切换视频时，评论数清零，相关视频复位，视频信息收起，app按钮刷新
+	let $openInApp = $("ul.submenu2 li.open-in-app a", $sideMenu);
 	let titleObserver = new MutationObserver((records)=>{
 		$(".comment-total", $switchTag).text( $("#comment .b-head .results", $container).text());
 		$recoListContainer.scrollTop(0);
 		$('.l-con', $container).scrollTop(0);
 		$btInfo.removeClass('more-info');
+		$openInApp.attr('href', `bilibili://video/${GetVideoId()}`);
 	});
 	// titleObserver.observe($("#comment .b-head .results")[0], {
 	titleObserver.observe($("#viewbox_report .video-title .tit", $container)[0], {
