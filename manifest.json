@@ -45,6 +45,18 @@
          "js": [ "js/jquery.min.js", "js/common.js", "js/video.js" ],
          "run_at": "document_end"
       },
+
+      {
+         "matches": [ "*://www.bilibili.com/bangumi/*" ],
+         "css": [ "css/bangumi.css" ],
+         "run_at": "document_start"
+      },
+      {
+         "matches": [ "*://www.bilibili.com/bangumi/*" ],
+         "js": [ "js/jquery.min.js", "js/common.js", "js/bangumi.js" ],
+         "run_at": "document_end"
+      },
+
       {
          "matches": [ "*://t.bilibili.com/*" ],
          "css": [ "css/updates.css" ],
