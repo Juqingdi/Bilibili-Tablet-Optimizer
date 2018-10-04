@@ -88,7 +88,16 @@ function If_Html(statement, html1, html2 = '') {
 	return statement ? html1: html2;
 }
 
-function SetSideMenu( current = -1, schemeUrl = '') {
+// function SetSideMenu( current = -1, schemeUrl = '') {
+function SetSideMenu( ...option) {
+	let current = -1;
+	let schemeUrl = '';
+	for (var i = option.length - 1; i >= 0; i--) {
+		if($.type(option[i]) === 'number')
+			current = option[i];
+		else if($.type(option[i]) === 'string')
+			schemeUrl = option[i];
+	}
 	let userid = '';
 	// if(localStorage.time_tracker)
 		// userid = localStorage.time_tracker.substr( localStorage.time_tracker.indexOf('{') + 2, localStorage.time_tracker.indexOf(':') - 3 );
@@ -138,12 +147,11 @@ function SetSideMenu( current = -1, schemeUrl = '') {
 					<i class="BT-iconfont icon-history"></i>
 					<p>插件说明</p>
 				</li>`)}
-			${If_Html( schemeUrl !== '', `
-				<li class="open-in-app">
+				<li class="open-in-app" ${If_Html( schemeUrl === '', 'style=display:none')}>
 					<i class="BT-iconfont icon-app"></i>
 					<p>App内打开</p>
 					<a href="bilibili://${schemeUrl}"></a>
-				</li>`)}
+				</li>
 			</ul>
 			<ul class="popup popup-channels">
 				<li>
@@ -280,6 +288,12 @@ function SetSideMenu( current = -1, schemeUrl = '') {
 	});
 	// $app.after( $sideMenu);
 	$('body').append( $sideMenu);
+}
+
+function SetSchemeUrl(url) {
+	let $openInApp = $("ul.submenu2 li.open-in-app", $sideMenu);
+	$openInApp.show();
+	$("a", $openInApp).attr('href', `bilibili://${url}`);
 }
 
 function SyncStatus() {

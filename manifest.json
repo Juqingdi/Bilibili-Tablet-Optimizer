@@ -5,6 +5,8 @@
    // todo: "动态更新失效了"
    // todo: exclude_matches在平板上不起作用 
    // todo: 删掉专栏文章右侧的按钮，挡视野
+   // todo: 视频页点击app内打开后，视频应停止加载
+   // todo: 所有indexOf换成includes
 
 
    "manifest_version": 2,

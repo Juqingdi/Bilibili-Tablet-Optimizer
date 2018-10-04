@@ -1,7 +1,7 @@
 function Main() {
 	$('<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">').prependTo($("head"));
 	// RemoveHeader();
-	SetSideMenu(3);
+	SetSideMenu(3, `search/${GetKeyword()}`);
 
 	window.addEventListener('hashchange', function(event) {
 		console.log(event);
@@ -19,8 +19,9 @@ function Main() {
 	let observer = new MutationObserver((records)=>{
 		// console.log(records);
 		if(location.href !== previousLocation){
+			console.log('url changed');
 			previousLocation = location.href;
-			console.log('CreateFilterMenu');
+			SetSchemeUrl(`search/${GetKeyword()}`);
 			CreateFilterMenu();
 		}
 	});
@@ -28,6 +29,19 @@ function Main() {
 		'subtree': true,
 		'childList': true
 	});
+}
+
+function GetKeyword() {
+	if(location.search){
+		let parameters = location.search.substr(1).split('&');
+		for (let i = parameters.length - 1; i >= 0; i--) {
+			if( parameters[i].includes('keyword='))
+				return parameters[i].split('=')[1];
+		}
+		return '';
+	}
+	else
+		return '';
 }
 
 /*function CreateFilterMenu(){

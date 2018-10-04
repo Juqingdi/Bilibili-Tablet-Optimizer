@@ -6,11 +6,15 @@ function Main() {
 
 	let paths = location.pathname.split('/');
 	if(paths.length >= 3 && (/^\+?[1-9][0-9]*$/).test(paths[2]) ){
+		//直播内容页
 		// console.log('content');
+		SetSchemeUrl(`live/${location.pathname.split('/')[2]}`);
 		$('body').addClass('live-content');
 	}
 	else{
+		//直播主页
 		// console.log('index');
+		SetSchemeUrl('livearea');
 		let $tag = $(`
 		<div class="header-tag">
 			<a href="//live.bilibili.com/h5" class="active">直播</a>

@@ -9,6 +9,7 @@ function Main() {
 
 	if(location.pathname.indexOf('read/cv') !== -1){
 		//专栏文章页
+		SetSchemeUrl(`article/${location.pathname.split('/')[2].substr(2)}`);
 		// $(".right-side-bar").remove();
 		let $upInfo = $(".up-info-holder:not('.BT-new')");
 		let $newUpInfo = $('<div class="up-info-holder BT-new"><div class="fixed-box"></div></div>');
@@ -18,6 +19,8 @@ function Main() {
 	}
 	else{
 		// 专栏目录页
+		if(location.pathname === '/read/home')
+			SetSchemeUrl('category/65541');
 		$(".page-content .right-side .more").remove();
 		// console.log($(".article-list").length);
 		let $articleList = $(".page-content .left-side .article-list .article-list-holder");
