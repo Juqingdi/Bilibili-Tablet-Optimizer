@@ -14,10 +14,14 @@ function Main() {
 		AddCinemaTag(177);
 	else if(CheckChannelId(11))
 		AddCinemaTag(11);
-	else if(CheckChannelId([13,33,32,51,152]))
+	else if(CheckChannelId([13,33,32,51,152])){
 		AddAnimeTag();
-	else if(CheckChannelId([167,153,168,169,170]))
+		SetSchemeUrl('pgc/bangumi');
+	}
+	else if(CheckChannelId([167,153,168,169,170])){
 		AddGuochuangTag();
+		SetSchemeUrl('pgc/domestic');
+	}
 }
 
 function CheckChannelId(channelId) {
