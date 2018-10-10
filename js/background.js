@@ -4,13 +4,13 @@
 		filename: message.filename,
 		saveAs: true
 	});	
-});
+});*/
 
 chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
     if (message.turnedOn === true) {
         chrome.browserAction.setBadgeText({text: ' on ', tabId: sender.tab.id});
     }
-});*/
+});
 
 chrome.cookies.set({
 	url: 'https://www.bilibili.com/video/*',
@@ -88,3 +88,8 @@ chrome.webRequest.onBeforeRequest.addListener( (request)=>{
 		chrome.tabs.sendMessage(tabId, {tabChanged: true});
 	}
 });*/
+
+chrome.runtime.onInstalled.addListener(function(){
+	chrome.storage.local.set({enablePc: true, optimize: true});
+	// checkEnablePc(true);
+});

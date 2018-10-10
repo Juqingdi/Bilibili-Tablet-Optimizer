@@ -1,4 +1,4 @@
-/*const pc_box = document.getElementById('pc');
+const pc_box = document.getElementById('pc');
 const optimize_box = document.getElementById('optimize');
 const tip2 = document.getElementById('tip2');
 
@@ -30,10 +30,4 @@ pc_box.onclick = function(element) {
 optimize_box.onclick = function(element) {
 	let optimize = element.target.checked;
 	chrome.storage.local.set({optimize: optimize});
-}*/
-
-const optimize_box = document.getElementById('optimize');
-optimize_box.onclick = element => {
-	// alert(element.target.checked);
-	alert(test);
 }

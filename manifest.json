@@ -14,7 +14,7 @@
    "manifest_version": 2,
    "name": "bilibili平板端优化",
    "description": "bilibili平板端优化",
-   "permissions": [ "*://*.bilibili.com/*", "https://*.acgvideo.com/*", "https://static.hdslb.com/*", "tabs", "cookies", "webRequest", "webRequestBlocking"],
+   "permissions": [ "*://*.bilibili.com/*", "https://*.acgvideo.com/*", "https://static.hdslb.com/*", "tabs", "cookies", "webRequest", "webRequestBlocking", "storage"],
    "version": "1.0",
    "background": {
       "page": "background.html"

@@ -90,6 +90,8 @@ function If_Html(statement, html1, html2 = '') {
 
 // function SetSideMenu( current = -1, schemeUrl = '') {
 function SetSideMenu( ...option) {
+	$("body").addClass('BT-optimized');
+	
 	let current = -1;
 	let schemeUrl = '';
 	for (var i = option.length - 1; i >= 0; i--) {
@@ -397,3 +399,5 @@ function GetMessage(){
 		childList: true
 	});
 }*/
+
+chrome.runtime.sendMessage({turnedOn:true});

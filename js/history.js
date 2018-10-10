@@ -4,5 +4,8 @@ function Main() {
 	SetSideMenu(5);
 }
 
-if(true)
-	Main();
+chrome.storage.local.get(null, function(data){
+	if(data.enablePc && data.optimize){
+		Main();
+	}
+});
