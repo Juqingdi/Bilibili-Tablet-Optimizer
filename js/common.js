@@ -255,7 +255,7 @@ function SetSideMenu( ...option) {
 				<li>
 					<a target="_blank" href="//pay.bilibili.com/paywallet-fe/bb_balance.html">我的钱包</a>
 				</li>
-				<li>
+				<li class="option">
 					<a href="javascript:;">插件说明</a>
 				</li>
 			</ul>`)}
@@ -286,6 +286,19 @@ function SetSideMenu( ...option) {
 		status.active = 'none';
 		SyncStatus();
 	});
+
+	let $option = $("ul.popup-my li.option a", $sideMenu);
+	let $iframe = null;
+	$option.click(()=>{
+		if($iframe === null){
+			$iframe = $(`<iframe id="BT-option-iframe" scrolling="no"></iframe>`);
+			$("body").append($iframe);
+		}
+
+		// chrome.runtime.sendMessage({option:true});
+		$iframe.attr('src', chrome.extension.getURL('popup.html')).show();
+	});
+
 	// $app.after( $sideMenu);
 	$('body').append( $sideMenu);
 }

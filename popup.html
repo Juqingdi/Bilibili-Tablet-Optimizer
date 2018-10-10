@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<style>
+	body{
+		margin: 0;
+		background-color: #0084ff;
+	}
+	.main{
+		width: 300px;
+		color: #fff;
+		text-align: center;
+		padding: 20px;
+	}
+	.option, p{
+		margin: 12px;
+	}
+	.option{
+		font-size: 24px;
+	}
+	.option input{
+		transform: scale(1.7);
+	}
+	.tip1 {
+		margin-top: 20px;
+		font-size: 16px;
+	}
+	.tip2{
+		display: none;
+		margin: 18px 53px 12px 53px;
+		font-size: 14px;
+		color: yellow;
+	}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="option">
+			<label for="pc">强制PC版页面</label>
+			<input type="checkbox" id="pc">
+		</div>
+		<div class="option">
+			<label for="optimize">PC版页面优化</label>
+			<input type="checkbox" id="optimize">
+		</div>
+		<p class="tip1">更改选项后需手动刷新页面</p>
+		<p class="tip2" id="tip2"><i>不开启PC版页面时，建议关闭该插件，以减少资源占用</i></p>
+	</div>
+	<script type="text/javascript" src="js/popup.js"></script>
+</body>
+</html>

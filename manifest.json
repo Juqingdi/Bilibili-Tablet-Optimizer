@@ -5,11 +5,11 @@
    // todo: "动态更新失效了"
    // todo: exclude_matches在平板上不起作用 
    // todo: 删掉专栏文章右侧的按钮，挡视野
-   // todo: 视频页和直播页，点击app内打开后，视频应停止加载
    // todo: 所有indexOf换成includes
    // todo: 直播分区页跳转错误
    // todo: 直播页分区框会被视频封面挡住
 
+   // todo: 视频页和直播页，点击app内打开后，视频应停止加载 （可能技术上不可行，也没有必要）
 
    "manifest_version": 2,
    "name": "bilibili平板端优化",
@@ -18,6 +18,9 @@
    "version": "1.0",
    "background": {
       "page": "background.html"
+   },
+   "browser_action": {
+      "default_popup": "popup.html"
    },
    "content_scripts": [
       {
@@ -173,8 +176,5 @@
       "48": "img/icon48.png",
       "128": "img/icon128.png"
    },
-   "browser_action": {
-      "default_icon": "img/toolbar.png"
-   },
-   "web_accessible_resources": [ "css/*.css", "css/iconfont.ttf" ]
+   "web_accessible_resources": [ "css/*.css", "css/iconfont.ttf", "popup.html" ]
 }
