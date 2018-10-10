@@ -1,3 +1,10 @@
+body:not(.origin) #app {
+    margin-left: 66px;
+}
+body:not(.origin) .bili-header-m{
+    display: none;
+}
+
 @font-face {
   font-family: "BT-iconfont";
   src: url('chrome-extension://__MSG_@@extension_id__/css/iconfont.ttf?t=1531174210070') format('truetype') /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
@@ -239,12 +246,5 @@
     right: 10px;
 }
 #BT-sidemenu .i-frame{
-    display: none;
-}
-
-.BT-optimized #app  {
-    margin-left: 66px;
-}
-.BT-optimized .bili-header-m{
     display: none;
 }
