@@ -5,5 +5,9 @@ function Main() {
 	SetSideMenu(4);
 }
 
-if(true)
-	Main();
+chrome.storage.local.get(null, function(data){
+	if(data.enablePc && data.optimize)
+		Main();
+	else
+		$("body").addClass('origin');
+});

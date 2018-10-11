@@ -21,9 +21,8 @@ function Main() {
 }
 
 chrome.storage.local.get(null, function(data){
-	if(data.enablePc && data.optimize){
+	if(data.enablePc && data.optimize)
 		Main();
-	}else{
+	else
 		$("body").addClass('origin');
-	}
 });

@@ -1,39 +1,39 @@
-#app.main-container .bgray-btn,
-#app.main-container .bangumi-nav-right,
-#home_footer{
+body:not(.origin) #app.main-container .bgray-btn,
+body:not(.origin) #app.main-container .bangumi-nav-right,
+body:not(.origin) #home_footer{
     display: none;
 }
 
 /*番剧视频页*/
-#app.main-container{
+body:not(.origin) #app.main-container{
     overflow-x: hidden;
 }
-#app.main-container .bangumi-list-wrapper .bottom-block .slider-contro span.slider-next{
+body:not(.origin) #app.main-container .bangumi-list-wrapper .bottom-block .slider-contro span.slider-next{
     right: 0;
 }
 
 /*番剧详情页*/
-#app.media-detail-wrp{
+body:not(.origin) #app.media-detail-wrp{
     margin-left: 60px;
 }
 @media screen and (max-width: 1100px){
-    #app.media-detail-wrp{
+    body:not(.origin) #app.media-detail-wrp{
         overflow-x: hidden;
     }
-    #app.media-detail-wrp .media-info-content,
-    #app.media-detail-wrp .media-tab-detail-wrp,
-    #app.media-detail-wrp .media-tab-detail-wrp .media-tab-detail-l-wrp{
+    body:not(.origin) #app.media-detail-wrp .media-info-content,
+    body:not(.origin) #app.media-detail-wrp .media-tab-detail-wrp,
+    body:not(.origin) #app.media-detail-wrp .media-tab-detail-wrp .media-tab-detail-l-wrp{
         width: 100%;
     }
-    #app.media-detail-wrp .media-tab-detail-wrp .media-tab-detail-r{
+    body:not(.origin) #app.media-detail-wrp .media-tab-detail-wrp .media-tab-detail-r{
         margin-left: 0;
         margin-top: 10px;
         float: left;
     }
-    #app.media-detail-wrp .media-info-wrp .media-info-content .media-info-inner .media-info-r{
+    body:not(.origin) #app.media-detail-wrp .media-info-wrp .media-info-content .media-info-inner .media-info-r{
         margin-right: 16px;
     }
-    #app.media-detail-wrp .media-info-card{
+    body:not(.origin) #app.media-detail-wrp .media-info-card{
         display: inline-block;
         vertical-align: top;
         margin-top: 0;
@@ -42,11 +42,11 @@
 }
 
 /*番剧评论页*/
-#app.main-review-container{
+body:not(.origin) #app.main-review-container{
     margin-left: 60px;
 }
 @media screen and (max-width: 1160px){
-    #app.main-review-container .review-header-wrapper{
+    body:not(.origin) #app.main-review-container .review-header-wrapper{
         width: 1100px;
     }
 }

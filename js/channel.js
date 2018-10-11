@@ -72,5 +72,10 @@ function AddGuochuangTag() {
 		`);
 }
 
-if(true)
-	Main();
+chrome.storage.local.get(null, function(data){
+	if(data.enablePc && data.optimize)
+		Main();
+	else{
+		$("html, body").addClass('origin');
+	}
+});

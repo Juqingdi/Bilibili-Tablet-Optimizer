@@ -1,21 +1,21 @@
-#link-message{
+body:not(.origin) #link-message{
     padding-left: 66px;
 }
-#link-message #link-message-container{
+body:not(.origin) #link-message #link-message-container{
     overflow-x: auto;
 }
-#link-message .container{
+body:not(.origin) #link-message .container{
     width: auto;
     height: 100vh;
     min-width: 788px;
 }
-#link-message .whisper{
+body:not(.origin) #link-message .whisper{
     height: calc(100vh - 72px);
 }
-#link-message .whisper .action-menu .menu-list{
+body:not(.origin) #link-message .whisper .action-menu .menu-list{
     left: calc(-86px + 50%);
 }
-#link-message .whisper .action-menu .menu-list:before{
+body:not(.origin) #link-message .whisper .action-menu .menu-list:before{
     left: calc(50% - -27px);
 }
 

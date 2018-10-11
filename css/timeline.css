@@ -1,4 +1,4 @@
-#app{
+body:not(.origin) #app{
 	margin-left: auto;
 }
 
@@ -11,6 +11,6 @@
 	}
 }*/
 
-.bili-footer{
+body:not(.origin) .bili-footer{
 	display: none;
 }
