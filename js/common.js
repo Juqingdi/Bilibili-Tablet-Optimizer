@@ -2,6 +2,7 @@ const $app = $("#app");
 let $sideMenu;
 let status = {active: 'none', current: 0};
 let $menus, $popups;
+let userid = getCookie('DedeUserID');
 
 $.fn.onSwipeRight = function( callback){
 	$(this).on("touchstart", function(e) {
@@ -98,10 +99,8 @@ function SetSideMenu( ...option) {
 		else if($.type(option[i]) === 'string')
 			schemeUrl = option[i];
 	}
-	let userid = '';
 	// if(localStorage.time_tracker)
 		// userid = localStorage.time_tracker.substr( localStorage.time_tracker.indexOf('{') + 2, localStorage.time_tracker.indexOf(':') - 3 );
-	userid = getCookie('DedeUserID');		
 	// console.warn(userid);
 	$sideMenu = $((`
 		<div id="BT-sidemenu">
