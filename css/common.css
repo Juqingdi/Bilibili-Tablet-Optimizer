@@ -213,9 +213,14 @@ body:not(.origin) .bili-header-m{
 #BT-sidemenu .nav-item{
     margin-top: -60px;
 }
-#BT-sidemenu .nav-item a{
-    opacity: 0;
+#BT-sidemenu .nav-item .t{
     padding: 0;
+    font-size: 0;
+}
+#BT-sidemenu .nav-item .t .num{
+    font-size: 12px;
+    top: 4px;
+    right: 5px;
 }
 #BT-sidemenu ul.popup-my .message-num{
     display: none;

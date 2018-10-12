@@ -339,10 +339,11 @@ function GetDynamic(){
 		return;
 
 	let $nav = $(".bili-header-m .nav-con.fr");
-	let $playpageDynamic;
 	let observer = new MutationObserver((records)=>{
-		$playpageDynamic = $('.nav-item[report-id="playpage_dynamic"]', $nav);
+		let $playpageDynamic = $('.nav-item[report-id="playpage_dynamic"]', $nav);
 		if($playpageDynamic.length > 0){
+			// console.log($playpageDynamic.prop('outerHTML'));
+			$(".t", $playpageDynamic)[0].href += '?tab=8';
 			$(".submenu1 .updatings", $sideMenu).after( $playpageDynamic);
 			$(".bili-header-m").remove();
 			observer.disconnect();
