@@ -46,6 +46,7 @@ body:not(.origin) #app .live-panel{
 }
 body:not(.origin) #app .notice-panel{
     order: 2;
+    display: none; /*图片尺寸不好搞，懒得调了，删掉*/
 }
 body:not(.origin) #app .tag-panel{
     order: 3;
@@ -73,8 +74,15 @@ body:not(.origin) #app .live-up .live-up-name{
    display: flex;
 }
 
-body:not(.origin) #app .back-top{
+body:not(.origin) #app .back-top,
+body:not(.origin) #app .back-top:hover{
+    width: 94px;
+    height: 123px;
+    background-position: -28px -28px;
     bottom: -30px;
+    background-image: url(//s2.hdslb.com/bfs/static/blive/blfe-dynamic-web/static/img/rocket_top.bcc748c.png);
+    animation: none;
+    touch-action: none;
 }
 
 body:not(.origin) #app .home-page .home-container .home-content .center-panel{

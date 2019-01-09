@@ -64,7 +64,8 @@ body:not(.origin) #bofqi {
     height: 405px !important;
 }
 body:not(.origin) #bofqi .bilibili-player .bilibili-player-area.video-state-pause .bilibili-player-video-control-mask,
-body:not(.origin) #bofqi .bilibili-player .bilibili-player-area.video-state-pause .bilibili-player-video-wrap .bilibili-player-video-control-wrap{
+body:not(.origin) #bofqi .bilibili-player .bilibili-player-area.video-state-pause .bilibili-player-video-wrap .bilibili-player-video-control-wrap,
+body:not(.origin) #bofqi .bilibili-player .bilibili-player-area.video-state-pause .bilibili-player-video-control-bottom{
     visibility: visible;
     opacity: 1;
 }

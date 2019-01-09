@@ -26,10 +26,12 @@ function Main() {
 			$livePanel = $(".live-panel", $rightPanel);
 		if(!$rTagPanel || $rTagPanel.length === 0)
 			$rTagPanel = $(".tag-panel", $rightPanel);
-		if($userPanel.length > 0 && $lTagPanel.length > 0 && $noticePanel.length > 0 && $livePanel.length > 0 && $rTagPanel.length > 0){
+		if($userPanel.length > 0 && $lTagPanel.length > 0/* && $noticePanel.length > 0*/ && $livePanel.length > 0 && $rTagPanel.length > 0){ //公告栏有时没有
 			panelsObserver.disconnect();
 			$rightPanelWrapper.append( $("> div", $rightPanel)).append($userPanel).append($lTagPanel);
 			$rightPanelWrapper.appendTo( $rightPanel);
+			// console.log($rightPanel.width());
+			$rightPanelWrapper.width( $rightPanel.width() - 8);
 
 			/*let rightPanelHeight = 0;
 			$(window).scroll(()=>{
