@@ -10,7 +10,7 @@ body:not(.origin) .bili-header-m{
   src: url('chrome-extension://__MSG_@@extension_id__/css/iconfont.ttf?t=1531174210070') format('truetype') /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
 }
 
-.BT-iconfont {
+.BT-iconfont, #BT-sidemenu .BT-iconfont {
   font-family:"BT-iconfont" !important;
   font-size:16px;
   font-style:normal;

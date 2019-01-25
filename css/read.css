@@ -47,6 +47,7 @@
     height: 371.25px;
 }
 #BT-read .right-side-bar{
+    display: none;
     right: 7px;
     top: 33px;
     z-index: 1;

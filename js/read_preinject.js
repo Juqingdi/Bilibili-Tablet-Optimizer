@@ -25,6 +25,7 @@ function Main() {
 				if(
 					currentNode.innerText.indexOf('isPC = false') >= 0 ||
 					currentNode.src === 'https://static.hdslb.com/common/js/footer.js' || //生成页脚
+					currentNode.src === 'https://static.hdslb.com/public/timing.min.js' || //Refused to get unsafe header "Trace-Id"
 					false
 				){
 					console.info(currentNode);
