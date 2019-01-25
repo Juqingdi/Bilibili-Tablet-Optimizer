@@ -189,6 +189,11 @@ function SetSideMenu( ...option) {
 					<a href="//m.bilibili.com/channel/36.html"></a>
 				</li>
 				<li>
+					<i class="digital"></i>
+					<p>数码</p>
+					<a href="//m.bilibili.com/channel/188.html"></a>
+				</li>
+				<li>
 					<i class="life"></i>
 					<p>生活</p>
 					<a href="//m.bilibili.com/channel/160.html"></a>

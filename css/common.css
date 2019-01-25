@@ -149,6 +149,9 @@ body:not(.origin) .bili-header-m{
 #BT-sidemenu ul.popup-channels li i.technology{
     background-position-y: -529px;
 }
+#BT-sidemenu ul.popup-channels li i.digital{
+    background-position: -145px -1745px;
+}
 #BT-sidemenu ul.popup-channels li i.life{
     background-position-y: -1168px;
 }
