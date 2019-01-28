@@ -26,10 +26,10 @@ function Main() {
 
 function CheckChannelId(channelId) {
 	if(typeof(channelId) === 'number')
-		return location.pathname.indexOf( channelId + '.html') >= 0;
+		return location.pathname.includes( channelId + '.html');
 	else{
 		for (let i = channelId.length - 1; i >= 0; i--) {
-			if( location.pathname.indexOf( channelId[i] + '.html') >= 0)
+			if( location.pathname.includes( channelId[i] + '.html'))
 				return true;
 		}
 		return false;

@@ -10,14 +10,14 @@ function Main() {
 	$(".bili-footer").remove();
 
 	let $tags = $("#app .bread-crumb ul li a, #app .bangumi-index-crumb ul li a");
-	if(location.pathname.indexOf('/anime/') >= 0){
+	if(location.pathname.includes('/anime/')){
 		$tags[0].href = '//m.bilibili.com/channel/13.html';
 		$tags[1].href = '//m.bilibili.com/channel/33.html';
 		$tags[2].href = '//m.bilibili.com/channel/32.html';
 		$tags[3].href = '//m.bilibili.com/channel/51.html';
 		$tags[4].href = '//m.bilibili.com/channel/152.html';
 	}
-	else if(location.pathname.indexOf('/guochuang/') >= 0){
+	else if(location.pathname.includes('/guochuang/')){
 		$tags[0].href = '//m.bilibili.com/channel/167.html';
 		$tags[1].href = '//m.bilibili.com/channel/153.html';
 		$tags[2].href = '//m.bilibili.com/channel/168.html';
@@ -26,7 +26,7 @@ function Main() {
 	}
 
 	//添加左右滑动事件
-	if(location.pathname.indexOf('/timeline') >= 0){
+	if(location.pathname.includes('/timeline')){
 		let $timelineHeader = $('.timeline-container .timeline-header');
 		if($(".arrow-left, .arrow-right", $timelineHeader).length === 2){
 			$(".timeline-container").onSwipe((direction)=>{

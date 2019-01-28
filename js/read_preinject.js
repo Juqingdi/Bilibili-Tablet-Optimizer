@@ -13,7 +13,7 @@ function Main() {
 			// 删header
 			/*if(record.addedNodes.length > 0 && record.addedNodes[0].tagName === 'DIV'){
 				currentNode = record.addedNodes[0];
-				if(currentNode.className.indexOf('bili-header-m') >= 0){
+				if(currentNode.className.includes('bili-header-m')){
 					console.info(currentNode);
 					currentNode.parentNode.removeChild(currentNode);
 					// currentNode.style = "display:none";
@@ -23,7 +23,7 @@ function Main() {
 			if(record.addedNodes.length > 0 && record.addedNodes[0].tagName === 'SCRIPT'){
 				currentNode = record.addedNodes[0];
 				if(
-					currentNode.innerText.indexOf('isPC = false') >= 0 ||
+					currentNode.innerText.includes('isPC = false') ||
 					currentNode.src === 'https://static.hdslb.com/common/js/footer.js' || //生成页脚
 					currentNode.src === 'https://static.hdslb.com/public/timing.min.js' || //Refused to get unsafe header "Trace-Id"
 					false

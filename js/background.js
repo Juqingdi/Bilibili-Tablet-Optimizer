@@ -38,14 +38,14 @@ chrome.webRequest.onBeforeSendHeaders.addListener( (request)=>{
 
 //强制直播PC页跳转到手机页
 chrome.webRequest.onBeforeRequest.addListener( (request)=>{
-	if(request.url.indexOf("live.bilibili.com/h5") < 0){
+	if(!request.url.includes("live.bilibili.com/h5")){
 		return {redirectUrl: request.url.replace("live.bilibili.com", "live.bilibili.com/h5")};	
 	}
 }, {urls: ["https://live.bilibili.com/*"]}, ["blocking"] );
 
 //强制视频播放页跳转到PC页
 chrome.webRequest.onBeforeRequest.addListener( (request)=>{
-	if(request.url.indexOf("live.bilibili.com/h5") < 0){
+	if(!request.url.includes("live.bilibili.com/h5")){
 		let newUrl = request.url.replace('m.bilibili', 'www.bilibili');
 		newUrl = newUrl.replace('.html', '/');
 		return {redirectUrl: newUrl};	
@@ -84,7 +84,7 @@ chrome.webRequest.onBeforeRequest.addListener( (request)=>{
 }, ["blocking"]);*/
 
 /*chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab)=>{
-	if(changeInfo.url && changeInfo.url.indexOf('search.bilibili.com') >= 0){
+	if(changeInfo.url && changeInfo.url.includes('search.bilibili.com')){
 		chrome.tabs.sendMessage(tabId, {tabChanged: true});
 	}
 });*/

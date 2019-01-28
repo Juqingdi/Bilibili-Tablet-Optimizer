@@ -154,6 +154,10 @@ body:not(.origin) #app .forw-face{
 body:not(.origin) #app .sticky-bar,
 body:not(.origin) #app .home-page .home-container .home-content .center-panel .section-block, 
 body:not(.origin) #app .home-page .home-container .home-content .left-panel,
-body:not(.origin) #app .userinfo-wrapper{
+body:not(.origin) #app .userinfo-wrapper,
+body:not(.origin) #app .video-container .image-area .see-later,
+body:not(.origin) #app .danmu-module,
+body:not(.origin) #app .video-container .image-area .mask,
+body:not(.origin) #app .cover-preview-module{
     display: none;
 }

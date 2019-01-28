@@ -7,7 +7,7 @@ function Main() {
 	// $(".bili-footer").hide();
 	$("body").attr('id', 'BT-read');
 
-	if(location.pathname.indexOf('read/cv') !== -1){
+	if(location.pathname.includes('read/cv')){
 		//专栏文章页
 		SetSchemeUrl(`article/${location.pathname.split('/')[2].substr(2)}`);
 		// $(".right-side-bar").remove();
