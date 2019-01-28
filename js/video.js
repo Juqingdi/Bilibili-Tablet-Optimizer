@@ -49,7 +49,7 @@ function CreateFramework() {
 	<div id="BT-videopage">
 		<div class="l-con">
 			<div id="bofqi_container" class="container">
-				<div class="pop-panel">
+				<div class="pop-panel poped">
 					<div class="popout"></div>
 					<div class="popin"></div>
 				</div>
@@ -76,7 +76,6 @@ function CreateFramework() {
 				</div>
 			</div>
 		</div>
-		<div class="video-page-mask"></div>
 	</div>
 	`);
 	$('body').append($container);
@@ -90,10 +89,17 @@ function CreateFramework() {
 		$bofqiContainer.height( bofqiContainerWidth * 9 /16 );
 		let $bofqiPanel = $(".pop-panel", $bofqiContainer);
 		let scale = bofqiContainerWidth / bofqiWidth;
-		$bofqiPanel.css('zoom', scale);
+		// $bofqiPanel.css('zoom', scale);
+		$bofqiPanel.css({
+			'position': 'fixed',
+			'transform': `translate( ${(window.innerWidth - bofqiWidth) / 2}px, ${(window.innerHeight - bofqiHeight) / 2}px )`,
+		    'transition': 'transform 0.5s',
+			'zoom': 0
+		});
 
 		let $popout = $(".popout", $bofqiContainer);
 		let $popin = $(".popin", $bofqiContainer);
+		$popin.hide();
 		$popout.click(()=>{
 			$bofqiPanel.addClass('poped');
 			$bofqiPanel.css({
@@ -131,11 +137,10 @@ function CreateFramework() {
 }
 
 function Decorate() {
-	$(".video-page-mask", $container).remove();
-
 	//播放器
 	$bofqi = $("#bofqi");
 	$recoListContainer = $("#reco_list_container", $container);
+	$(".popin", $bofqiContainer).show();
 
 	//工具栏
 	let $toolbar = $("#arc_toolbar_report");

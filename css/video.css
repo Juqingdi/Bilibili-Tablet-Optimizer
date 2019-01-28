@@ -50,14 +50,6 @@ body:not(.origin) #BT-videopage .container{
     background-color: #fff;
     padding: 8px;
 }
-body:not(.origin) #BT-videopage .video-page-mask{
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 70;
-}
 
 body:not(.origin) #bofqi {
     width: 638px !important;
@@ -244,6 +236,11 @@ body:not(.origin) #v_upinfo.up-info .u-info .name .message,
 body:not(.origin) #v_upinfo.up-info .u-info .desc,
 body:not(.origin) #v_upinfo.up-info .btn .bi-btn.elecrank-btn{
     display: none;
+}
+body:not(.origin) #v_upinfo.up-info .btn{
+    float: right;
+    margin: 0;
+    clear: none;
 }
 body:not(.origin) #v_upinfo.up-info .u-info .name .username{
     line-height: 3;
