@@ -113,6 +113,7 @@ function SetSideMenu( ...option) {
 				<li>
 					<i class="BT-iconfont icon-history"></i>
 					<p>插件说明</p>
+					<a href="https://github.com/Juqingdi/Bilibili-Tablet-Optimizer/blob/master/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.md" target="_blank"></a>
 				</li>`)}
 				<li class="open-in-app" ${If_Html( schemeUrl === '', 'style=display:none')}>
 					<i class="BT-iconfont icon-app"></i>
@@ -228,7 +229,7 @@ function SetSideMenu( ...option) {
 					<a target="_blank" href="//pay.bilibili.com/paywallet-fe/bb_balance.html">我的钱包</a>
 				</li>
 				<li class="option">
-					<a href="javascript:;">插件说明</a>
+					<a href="https://github.com/Juqingdi/Bilibili-Tablet-Optimizer/blob/master/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.md" target="_blank">插件说明</a>
 				</li>
 			</ul>`)}
 		</div>
