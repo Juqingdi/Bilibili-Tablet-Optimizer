@@ -2,7 +2,7 @@
 
    "manifest_version": 2,
    "name": "bilibili平板端优化",
-   "description": "bilibili平板端优化",
+   "description": "bilibili平板端优化，用于安卓平板Yandex浏览器，对Bilibili主要页面强制启用PC版，并进行横屏触屏优化",
    "permissions": [ "*://*.bilibili.com/*", "https://*.acgvideo.com/*", "https://static.hdslb.com/*", "tabs", "cookies", "webRequest", "webRequestBlocking", "storage"],
    "version": "1.0",
    "background": {
