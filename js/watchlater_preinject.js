@@ -13,7 +13,7 @@ function Main() {
 			if(record.addedNodes.length > 0 && record.addedNodes[0].tagName === 'SCRIPT'){
 				currentNode = record.addedNodes[0];
 				if(
-					currentNode.innerText.includes('isPC = false') >= 0 ||
+					currentNode.innerText.includes('isPC = false') ||
 					currentNode.src === 'https://static.hdslb.com/common/js/footer.js' || //生成页脚
 					false
 				){
