@@ -13,7 +13,6 @@ body:not(.origin) #app .v-wrap .l-con #playerWrap{
     z-index: 1;
 }
 body:not(.origin) #app{
-    /*display: none;*/
     height: 0;
     overflow: hidden;
 }
@@ -27,7 +26,6 @@ body:not(.origin) #BT-videopage{
     padding-left: 60px;
     box-sizing: border-box;
     background-color: #f6f6f6;
-    /*background-color: #fff;*/
 }
 body:not(.origin) #BT-videopage .l-con{
     box-sizing: border-box;
@@ -101,7 +99,6 @@ body:not(.origin) #bofqi_container .popin{
     height: 70px;
     left: 100%;
     top: 0;
-    /*background: url(https://static.hdslb.com/images/base/icons.png) -529px -1677px no-repeat;*/
     background: url(https://static.hdslb.com/images/base/icons.png) -1232px -893px no-repeat;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -189,9 +186,6 @@ body:not(.origin) #BT-info.more-info .BT-more{
     background-position-x: -534px;
 }
 
-body:not(.origin) #viewbox_report{
-    /*height: 60px;*/
-}
 body:not(.origin) #viewbox_report .video-title{
     font-size: 15px;
     padding-right: 20px;
@@ -334,9 +328,6 @@ body:not(.origin) #comment .bb-comment .comment-header{
 body:not(.origin) #comment .bb-comment .comment-list{
     padding-top: 0;
 }
-body:not(.origin) #comment .bb-comment .comment-send .comment-submit{
-    /*line-height: 100;   */
-}
 body:not(.origin) #comment .bb-comment .comment-send .comment-submit:before{
     content: "\e60c";
     font-family:"BT-iconfont" !important;
@@ -344,7 +335,6 @@ body:not(.origin) #comment .bb-comment .comment-send .comment-submit:before{
     font-style:normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /*line-height: 1;*/
     position: absolute;
     top: 0;
     left: 0;
@@ -375,30 +365,7 @@ body:not(.origin) #comment .bb-comment .comment-header .tabs-order li{
 body:not(.origin) #comment .paging-box-big .page-jump{
     text-align: right;
 }
-/*#comment .paging-box-big .current, #comment .paging-box-big .dian, #comment .paging-box-big .next, #comment .paging-box-big .prev, #comment .paging-box-big .tcd-number{
-    flex-grow: 1;
-}*/
-/*#comment .bb-comment .comment-list .list-item .user-face{
-    margin: 10px 0 0 0;
-}
-#comment .bb-comment .comment-list .list-item .user-face img{
-    width: 40px;
-    height: 40px;
-}
-#comment .bb-comment .legalize{
-    top: 22px;
-    left: 21px;
-}
-#comment .bb-comment .comment-list .list-item .user-face .hot-follow{
-    top: 8px;
-}
-#comment .bb-comment .comment-list .list-item .user-face .hot-follow .follow-btn{
-    width: 40px;
-}
-#comment .bb-comment .comment-list .list-item .con{
-    padding-top: 10px;
-    margin-left: 46px;
-}*/
+
 body:not(.origin) #comment .bb-comment .comment-list .list-item{
     border-top: 1px solid #e5e9ef;
 }
@@ -478,9 +445,6 @@ body:not(.origin) #BT-videopage .l-con #v_tag_container{
 body:not(.origin) #BT-videopage .r-con #v_upinfo_container{
     min-height: 40px;
 }
-/*#BT-videopage .r-con #BT-switch_tag{
-    padding-bottom: 0;
-}*/
 body:not(.origin) #BT-videopage .r-con #comment_container{
     padding-top: 0;
 }

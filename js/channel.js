@@ -1,8 +1,6 @@
 function Main() {
 	$('<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">').prependTo($("head"));
-	// RemoveHeader();
 	SetSideMenu(1);
-	// alert('test');
 
 	if(CheckChannelId(165)){
 		//广告栏目

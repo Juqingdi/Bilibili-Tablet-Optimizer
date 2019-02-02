@@ -1,6 +1,5 @@
 function Main() {
 	$('<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">').prependTo($("head"));
-	// RemoveHeader();
 	$(".report-wrap-module.elevator-module", $app).remove();
 	SetSideMenu(0, 'home');
 
@@ -15,7 +14,6 @@ function Main() {
 
 	$(".bili-wrapper .r-con, .zone-module .zone-rank, .sec-rank, .sec-rank-gc").remove();
 
-	// let $carouselBox = $(".carousel-box", $app);
 	let $recomment = $(".chief-recommend-module .recommend-module", $app);
 	$(".carousel-box", $app).insertAfter( $(".groom-module", $recomment).eq(0));
 }

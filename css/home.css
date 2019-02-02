@@ -42,7 +42,6 @@ body:not(.origin) .chief-recommend-module{
     padding-bottom: 25px;
 }
 body:not(.origin) .chief-recommend-module .recommend-module{
-    /*height: auto;*/
     height: 462px;
     display: flex;
     flex-wrap: wrap;

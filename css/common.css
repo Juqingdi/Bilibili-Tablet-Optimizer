@@ -94,12 +94,9 @@ body:not(.origin) .bili-header-m{
 	padding: 0 15px;
     width: 220px;
     height: auto;
-	/*top: calc(50% - 515px / 2);*/
 	top: 10px;
 	left: 70px;
 	border-radius: 5px;
-/*	background-color: #000;
-	opacity: 0.8;*/
     background-color: rgba(0,0,0,0.8);
 }
 #BT-sidemenu ul.popup-channels:before{

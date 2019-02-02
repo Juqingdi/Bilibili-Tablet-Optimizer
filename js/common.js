@@ -16,36 +16,10 @@ $.fn.onSwipeRight = function( callback){
 		Y = moveEndY - startY;
 
 		if ( X >= 30 && Math.abs(X) > Math.abs(Y) && X > 0 ){
-			console.log(startX, moveEndX, X);
 			callback();
 		}
 	});
 }
-
-/*$.fn.onSwipe = function( direction = '', callback = null){
-	if( direction === '' || callback === null)
-		return;
-	$(this).on("touchstart", function(e) {
-		startX = e.originalEvent.changedTouches[0].pageX,
-		startY = e.originalEvent.changedTouches[0].pageY;
-	});
-	$(this).on("touchend", function(e) {
-		moveEndX = e.originalEvent.changedTouches[0].pageX,
-		moveEndY = e.originalEvent.changedTouches[0].pageY,
-		X = moveEndX - startX,
-		Y = moveEndY - startY;
-
-		if( direction === 'right'){
-			if ( X >= 30 && Math.abs(X) > Math.abs(Y) )
-				callback();
-		}
-		else if( direction === 'left'){
-			if ( -X >= 30 && Math.abs(X) > Math.abs(Y) )
-				callback();
-		}
-	});
-	return this;
-}*/
 
 $.fn.onSwipe = function( callback){
 	if( !(callback && typeof(callback)==="function"))
@@ -69,9 +43,7 @@ $.fn.onSwipe = function( callback){
 }
 
 function RemoveHeader() {
-	// console.log($(".bili-header-m").prop('outerHTML'));
 	$(".bili-header-m").remove();
-	// $(".bili-header-m").hide();
 }
 
 function getCookie(name){ 
@@ -89,7 +61,6 @@ function If_Html(statement, html1, html2 = '') {
 	return statement ? html1: html2;
 }
 
-// function SetSideMenu( current = -1, schemeUrl = '') {
 function SetSideMenu( ...option) {
 	let current = -1;
 	let schemeUrl = '';
@@ -99,9 +70,6 @@ function SetSideMenu( ...option) {
 		else if($.type(option[i]) === 'string')
 			schemeUrl = option[i];
 	}
-	// if(localStorage.time_tracker)
-		// userid = localStorage.time_tracker.substr( localStorage.time_tracker.indexOf('{') + 2, localStorage.time_tracker.indexOf(':') - 3 );
-	// console.warn(userid);
 	$sideMenu = $((`
 		<div id="BT-sidemenu">
 			<ul class="submenu submenu1">
@@ -266,7 +234,6 @@ function SetSideMenu( ...option) {
 		</div>
 		`).trim());
 	$menus = $("ul.submenu1 li, ul.submenu2 li", $sideMenu);
-	// console.log($menus);
 	$popups = $("ul.popup", $sideMenu);
 
 	status.current = current;
@@ -298,12 +265,9 @@ function SetSideMenu( ...option) {
 			$iframe = $(`<iframe id="BT-option-iframe" scrolling="no"></iframe>`);
 			$("body").append($iframe);
 		}
-
-		// chrome.runtime.sendMessage({option:true});
 		$iframe.attr('src', chrome.extension.getURL('popup.html')).show();
 	});
 
-	// $app.after( $sideMenu);
 	$('body').append( $sideMenu);
 }
 
@@ -314,8 +278,6 @@ function SetSchemeUrl(url) {
 }
 
 function SyncStatus() {
-	// console.log(status);
-	// console.log($("ul.submenu1 li"), $sideMenu);
 	$menus.each((index, ele)=>{
 		if(index === status.current)
 			$(ele).addClass('current');
@@ -346,7 +308,6 @@ function GetDynamic(){
 	let observer = new MutationObserver((records)=>{
 		let $playpageDynamic = $('.nav-item[report-id="playpage_dynamic"]', $nav);
 		if($playpageDynamic.length > 0){
-			// console.log($playpageDynamic.prop('outerHTML'));
 			$(".t", $playpageDynamic)[0].href += '?tab=8';
 			$(".submenu1 .updatings", $sideMenu).after( $playpageDynamic);
 			$(".bili-header-m").remove();
@@ -362,7 +323,6 @@ function GetDynamic(){
 //获取消息数目
 function GetMessage(){
 	$.getJSON('https://message.bilibili.com/api/notify/query.notify.count.do').then((result)=>{
-		// console.log(result.data);
 		if(result.data){
 			let messageNum = 0;
 			messageNum += result.data.at_me;
@@ -375,32 +335,8 @@ function GetMessage(){
 				$(".popup-my .message-num", $sideMenu).text(messageNum).addClass('active');
 				$(".submenu2 .my").addClass('red-dot');
 			}
-			// $(".popup-my .message-num", $sideMenu).text(12).addClass('active'); //test
-			// $(".submenu2 .my").addClass('red-dot'); //test
 		}
 	});
 }
-
-/*function GetDynamic(){
-	if($(".bili-header-m").length === 0)
-		return;
-
-	let $nav = $(".bili-header-m .nav-con.fr");
-	let $playpageDynamic, $playpageMessage;
-	let observer = new MutationObserver((records)=>{
-		$playpageDynamic = $('.nav-item[report-id="playpage_dynamic"]', $nav);
-		$playpageMessage = $('.nav-item[report-id="playpage_message"]', $nav);
-		if($playpageDynamic.length > 0 && $playpageMessage.length > 0){
-			$(".submenu1 .updatings", $sideMenu).after( $playpageDynamic);
-			$(".submenu2 .my", $sideMenu).after( $playpageMessage);
-			$(".bili-header-m").remove();
-			observer.disconnect();
-		}
-	});
-	observer.observe($nav[0], {
-		subtree: true,
-		childList: true
-	});
-}*/
 
 chrome.runtime.sendMessage({turnedOn:true});

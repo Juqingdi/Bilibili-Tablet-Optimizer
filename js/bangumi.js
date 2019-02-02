@@ -1,6 +1,4 @@
 function Main() {
-	// $('<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">').prependTo($("head"));
-
 	if(location.pathname.includes('/play/ep'))
 		SetSideMenu(`bangumi/season/${GetId()}`); //新番播放页
 	else if(location.pathname.includes('media/md'))

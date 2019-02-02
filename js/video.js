@@ -10,15 +10,12 @@ function Main() {
 
 	$bofqi = $("#bofqi");
 	let $bilibiliPlayer = $("#bilibiliPlayer", $bofqi);
-	// console.log($bofqi.prop('outerHTML'));
 
 	CreateFramework();
 
 	let observer = new MutationObserver((records)=>{
 		$("#app .float-nav, #entryOld, #live_recommand_report, #slide_ad").remove();
 		RemoveHeader();
-		// $("#danmukuBox").remove(); //删掉的话切换分P会没弹幕
-		// $("#app").remove();
 		Decorate();
 		observer.disconnect();
 	});
@@ -43,8 +40,6 @@ function GetVideoId() {
 }
 
 function CreateFramework() {
-	// console.info($('#v_desc').prop('innerHTML'));
-
 	$container = $(`
 	<div id="BT-videopage">
 		<div class="l-con">
@@ -89,7 +84,6 @@ function CreateFramework() {
 		$bofqiContainer.height( bofqiContainerWidth * 9 /16 );
 		let $bofqiPanel = $(".pop-panel", $bofqiContainer);
 		let scale = bofqiContainerWidth / bofqiWidth;
-		// $bofqiPanel.css('zoom', scale);
 		$bofqiPanel.css({
 			'position': 'fixed',
 			'transform': `translate( ${(window.innerWidth - bofqiWidth) / 2}px, ${(window.innerHeight - bofqiHeight) / 2}px )`,
@@ -161,13 +155,6 @@ function Decorate() {
 		$btInfo.toggleClass('more-info');
 	});
 
-	//
-
-	//用户信息
-	/*let $upinfo = $("#v_upinfo");
-	console.info($(".btn.followed .b-gz .gz", $upinfo).prop('outerHTML'));
-	$(".btn.followed .b-gz .gz", $upinfo).prependTo( $(".u-info", $upinfo));*/
-
 	//评论与推荐
 	let $commentRecoScroll = $("#comment_reco .scroll", $container);
 
@@ -177,7 +164,6 @@ function Decorate() {
 	let ShowComment = function(){
 		$commentRecoScroll.css('transform', 'translateX(0%)');
 		$switchTag.addClass('comment-active').removeClass('reco-active');
-		// $(".comment-total", $switchTag).text( $("#comment .b-head .results", $container).text());
 	}
 	let ShowRecoList = function(){
 		$commentRecoScroll.css('transform', 'translateX(-50%)');
@@ -185,7 +171,6 @@ function Decorate() {
 	}
 	$(".BT-comment", $switchTag).click( ShowComment);
 	$(".BT-reco", $switchTag).click( ShowRecoList);
-	// $commentRecoScroll.onSwipe('left', ShowRecoList).onSwipe('right', ShowComment);
 	$commentRecoScroll.onSwipe((direction)=>{
 		if(direction === 'left')
 			ShowRecoList();
@@ -195,7 +180,6 @@ function Decorate() {
 
 	$("#bofqi").prependTo($('#bofqi_container .pop-panel', $container));
 	$viewboxReport.appendTo($("#viewbox_report_container", $container));
-	// console.log($("#arc_toolbar_report").prop('outerHTML'));
 	$("#arc_toolbar_report_container", $container).append( $toolbar);
 	$("#v_tag").appendTo($('#v_tag_container', $container));
 	$("#v_desc").appendTo($('#v_desc_container', $container));
@@ -213,7 +197,6 @@ function Decorate() {
 		$btInfo.removeClass('more-info');
 		$openInApp.attr('href', `bilibili://video/${GetVideoId()}`);
 	});
-	// titleObserver.observe($("#comment .b-head .results")[0], {
 	titleObserver.observe($("#viewbox_report .video-title .tit", $container)[0], {
 		characterData: true,
 		childList: true

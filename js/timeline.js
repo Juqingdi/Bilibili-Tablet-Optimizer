@@ -1,12 +1,6 @@
 //应用于 新番时间表 与 番剧 页面
 
 function Main() {
-	// alert('pause');
-	// $('<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">').prependTo($("head"));
-	// RemoveHeader();
-	// SetSideMenu(0);
-	// alert('test');
-
 	$(".bili-footer").remove();
 
 	let $tags = $("#app .bread-crumb ul li a, #app .bangumi-index-crumb ul li a");

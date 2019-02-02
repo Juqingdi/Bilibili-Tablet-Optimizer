@@ -1,25 +1,10 @@
 function Main() {
 	$('<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">').prependTo($("head"));
-	// RemoveHeader();
 	SetSideMenu(3, `search/${GetKeyword()}`);
 
-	window.addEventListener('hashchange', function(event) {
-		console.log(event);
-	});
-
-	/*CreateFilterMenu();
-
-	chrome.runtime.onMessage.addListener((message, sender, sendResponse)=>{
-		// console.log(message);
-		if(message.tabChanged === true)
-			CreateFilterMenu();
-	});*/
-	
 	let previousLocation = '';
 	let observer = new MutationObserver((records)=>{
-		// console.log(records);
 		if(location.href !== previousLocation){
-			console.log('url changed');
 			previousLocation = location.href;
 			SetSchemeUrl(`search/${GetKeyword()}`);
 			CreateFilterMenu();
@@ -44,69 +29,12 @@ function GetKeyword() {
 		return '';
 }
 
-/*function CreateFilterMenu(){
-	let $filterWrap = $(".filter-wrap");
-	let $currentLi;
-	if( $filterWrap.length === 0 || $(".filter-menu", $filterWrap).length > 0 )
-		return;
-
-	let $filterTypes = $(".filter-type", $filterWrap);
-	$(".filter-item:first-child a", $filterTypes).addClass('default');
-
-	let $filterMenu = $(`<ul class="filter-menu clearfix">
-		<li data-menu="order">
-			<span class="${ $(".filter-type.order li.active a", $filterWrap).hasClass('default') ? '' : 'default' }">${ $(".filter-type.order li.active a", $filterWrap).text() }</span>
-			<i class="arrow-down"></i>
-			<i class="arrow-up"></i>
-		</li>
-		<li data-menu="duration">
-			<span class="${ $(".filter-type.duration li.active a", $filterWrap).hasClass('default') ? '' : 'default' }">${ $(".filter-type.duration li.active a", $filterWrap).text() }</span>
-			<i class="arrow-down"></i>
-			<i class="arrow-up"></i>
-		</li>
-		<li data-menu="tids_1">
-			<span class="${ $(".filter-type.tids_1 li.active a", $filterWrap).hasClass('default') ? '' : 'default' }">${ $(".filter-type.tids_1 li.active a", $filterWrap).text() }</span>
-			<i class="arrow-down"></i>
-			<i class="arrow-up"></i>
-		</li>
-	</ul>`);
-	$filterWrap.prepend( $filterMenu);
-
-	$("li", $filterMenu).click((e)=>{
-		$currentLi = $(e.currentTarget);
-		// console.log($filterWrap.data('menu'), $currentLi.data('menu'));
-		if($currentLi.data('menu') === $filterWrap.attr('data-menu')){
-			$filterWrap.attr('data-menu', '');
-		}
-		else
-			$filterWrap.attr('data-menu', $currentLi.data('menu'));
-	});
-	$filterTypes.click((e)=>{
-		let $currentLiSpan = $(`li[data-menu="${$(e.currentTarget).parent().attr('data-menu')}"] span`);
-		let $currentA = $(e.target);
-		// console.log($currentA);
-		$currentLiSpan.text( $currentA.text());
-		if( $currentA.hasClass('default') )
-			$currentLiSpan.removeClass('default');
-		else
-			$currentLiSpan.addClass('default');
-		$filterWrap.attr('data-menu', '');
-	});
-
-
-
-	// todo: 点任意地方菜单收起
-
-	
-}*/
-
 function CreateFilterMenu(){
 	let $filterWrap = $("#server-search-app .filter-wrap");
 	if( $filterWrap.hasClass('observed'))
 		return;
 
 	let $filterTypes = $(".filter-type", $filterWrap);
-	// console.log($filterTypes.prop('outerHTML'));
 
 	let $filterMenuSpan, $filterTypeA;
 	let filterMenuHtml = '<ul class="filter-menu">';

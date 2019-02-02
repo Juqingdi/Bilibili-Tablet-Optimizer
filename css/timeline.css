@@ -2,15 +2,6 @@ body:not(.origin) #app{
 	margin-left: auto;
 }
 
-/*@media screen and (max-width: 980px){
-	#app .bread-crumb, #app .timeline-container, #app .timeline-header, #app .timeline-wrapper{
-		width: 854px !important;
-	}
-	#app .timeline-header.fixed {
-	    margin-left: -427px;
-	}
-}*/
-
 body:not(.origin) .bili-footer{
 	display: none;
 }

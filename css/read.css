@@ -141,7 +141,6 @@
     overflow-x: hidden;
 }
 #BT-read .page-content{
-	/*display: flex;*/
     background-color: #eaeaea;
     padding: 30px 6px 0 6px;
     overflow-x: auto;
@@ -155,7 +154,6 @@
 }
 #BT-read .page-content .right-side{
 	position: static !important;
-    /*flex-shrink: 0;*/
     transform: none;
 }
 #BT-read .page-content .right-side .right-side-fixed{

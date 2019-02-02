@@ -26,11 +26,6 @@ body:not(.origin) #app #page-index .col-1{
     width: 100%;
     box-sizing: border-box;
 }
-/*body:not(.origin) #app #page-index .video .content{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}*/
 
 body:not(.origin) #app #page-index .col-2{
     display: flex;
@@ -62,7 +57,6 @@ body:not(.origin) #app .n .n-data{
 }
 
 body:not(.origin) #app #page-dynamic .col-1{
-    /*margin-top: 109px;*/
     width: 100%;
 }
 body:not(.origin) #app #page-dynamic .col-2{
@@ -119,42 +113,6 @@ body:not(.origin) #app .contribution-item.cur .text{
 body:not(.origin) #app .contribution-item.cur .num{
     color: #99a2aa;
 }
-/*body:not(.origin) #app #page-video .col-full{
-    box-shadow: none;
-}
-body:not(.origin) #app .contribution-sidenav, body:not(.origin) #app #page-fav .fav-sidenav{
-    float: none;
-    width: 100%;
-    background-color: #f4f5f7;
-}
-body:not(.origin) #app .main-content, body:not(.origin) #app #page-fav .fav-main{
-    float: none;
-}
-body:not(.origin) #app .contribution-sidenav .contribution-list-container{
-    margin: -10px 0 0 0;
-}
-body:not(.origin) #app #page-fav .fav-sidenav .nav-title{
-    display: none;
-}
-body:not(.origin) #app .contribution-sidenav .contribution-item, body:not(.origin) #app #page-fav .fav-sidenav .fav-item{
-    display: inline-block;
-}
-body:not(.origin) #app .contribution-sidenav .contribution-item.cur, body:not(.origin) #app #page-fav .fav-sidenav .fav-item.cur{
-    background-color: unset;
-}
-body:not(.origin) #app .contribution-sidenav .text{
-    width: 30px;
-    line-height: 36px;
-}
-body:not(.origin) #app #page-fav .fav-sidenav .text{
-    line-height: 36px;
-}
-body:not(.origin) #app .contribution-item.cur .text, body:not(.origin) #app #page-fav .fav-sidenav .fav-item.cur .text, body:not(.origin) #app #page-fav .fav-sidenav .fav-item.cur .num, body:not(.origin) #app #page-fav .fav-sidenav .fav-item.cur .icon-fav-default{
-    color: #00a1d6;
-}
-body:not(.origin) #app .contribution-item.cur .num{
-    color: #99a2aa;
-}*/
 
 body:not(.origin) #app .contribution-sidenav~.main-content,
 body:not(.origin) #app #page-myalbum .album-content{

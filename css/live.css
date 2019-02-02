@@ -26,7 +26,6 @@ body:not(.origin) .app-ctnr .room-list-container{
 body:not(.origin) .app-ctnr .room-list-container .room-card:nth-of-type(2n){
 	margin-left: 0;
 }
-/*body:not(.origin) .app-ctnr*/
 
 body:not(.origin) .app-ctnr .logo-bar,
 body:not(.origin) .app-ctnr .top-nav-ctnr,
@@ -41,17 +40,8 @@ body:not(.origin).live-content .app-ctnr{
 body:not(.origin).live-content .logo-bar{
 	display: block;
 }
-/*body:not(.origin) .live-content .bilibili-lmp-video-wrapper[data-orientation=landscape]{
-    position: relative;
-    width: calc(100vw - 60px);
-    height: calc(100vh - 1.066666666666667rem);
-}*/
 
 body:not(.origin).live-content .bilibili-lmp-player-wrapper>.bilibili-lmp-video-wrapper{
-/*	position: relative;
-	width: 50%;
-	height: calc(100vh - 1.066666666666667rem);
-*/
 	position: fixed;
     top: 1.066666666666667rem;
     left: 60px;
@@ -76,20 +66,3 @@ body:not(.origin).live-content .bottom-part{
 body:not(.origin).live-content .bottom-chat{
 	display: none;
 }
-/*@media (orientation:landscape) {
-	body:not(.origin) .live-content .room-info {
-		display: block
-	}
-	body:not(.origin) .live-content .top-part {
-		height: unset;
-	}
-	body:not(.origin) .live-content .player-wrap .player-ctnr {
-		height: unset;
-	}
-	body:not(.origin) .live-content .bottom-part {
-		display: block
-	}
-	body:not(.origin) .live-content .split-actionbar {
-		display: block
-	}
-}*/

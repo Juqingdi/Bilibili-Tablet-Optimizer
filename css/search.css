@@ -100,7 +100,6 @@ body:not(.origin) #server-search-app .filter-wrap[data-menu='category_id'] .filt
     display: none;
 }
 body:not(.origin) #server-search-app .filter-wrap .filter-type{
-    /*display: none;*/
     position: absolute;
     padding: 5px 6px;
     background-color: #f4f4f4;
@@ -117,8 +116,6 @@ body:not(.origin) #server-search-app .filter-wrap .filter-item{
     margin-top: 5px;
     margin-bottom: 5px;
 
-/*    width: 61px;
-    word-break: keep-all;*/
 }
 body:not(.origin) #server-search-app .filter-wrap .filter-type.tids_1>.filter-item:nth-child(2){
     margin-left: 0;
@@ -127,7 +124,6 @@ body:not(.origin) #server-search-app .filter-wrap[data-menu='order'] .filter-typ
 body:not(.origin) #server-search-app .filter-wrap[data-menu='duration'] .filter-type.duration,
 body:not(.origin) #server-search-app .filter-wrap[data-menu='tids_1'] .filter-type.tids_1,
 body:not(.origin) #server-search-app .filter-wrap[data-menu='category_id'] .filter-type.category_id{
-    /*display: block;*/
     transform: none;
 }
 body:not(.origin) #server-search-app .filter-wrap .fold.up,
@@ -161,7 +157,7 @@ body:not(.origin) #server-search-app .live-wrap{
     margin: 0 6px;
 }
 body:not(.origin) #server-search-app .rocket-con{
-    display: none; /*暂时*/
+    display: none;
 }
 body:not(.origin) #server-search-app .total-wrap{
     display: none;

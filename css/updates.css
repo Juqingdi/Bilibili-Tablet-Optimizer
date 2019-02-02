@@ -1,7 +1,3 @@
-/*body{
-    overflow-x: hidden;
-}*/
-
 body:not(.origin) #app{
     margin-left: 60px;
     min-width: unset !important;
@@ -17,8 +13,6 @@ body:not(.origin) #app .home-page .home-container .home-content{
 }
 body:not(.origin) #app .home-page .home-container .home-content .right-panel{
     width: calc(100% - 562px);
-    /*max-width: 268px;*/
-    /*min-width: 224px;*/
 }
 body:not(.origin) #app .home-page .home-container .home-content .right-panel .right-panel-wrapper{
     display: flex;
@@ -29,10 +23,6 @@ body:not(.origin) #app .home-page .home-container .home-content .right-panel .ri
     overflow-y: auto;
     overscroll-behavior-y: none;
 }
-/*body:not(.origin) #app .home-page .home-container .home-content .right-panel .right-panel-wrapper.sticky{
-    position: sticky;
-    transition: transform 0.5s;
-}*/
 body:not(.origin) #app .home-page .home-container .home-content .right-panel .right-panel-wrapper > div{
     margin: 8px 0 0 0;
     width: 100%;
@@ -46,7 +36,7 @@ body:not(.origin) #app .live-panel{
 }
 body:not(.origin) #app .notice-panel{
     order: 2;
-    display: none; /*图片尺寸不好搞，懒得调了，删掉*/
+    display: none;
 }
 body:not(.origin) #app .tag-panel{
     order: 3;
@@ -99,8 +89,7 @@ body:not(.origin) #app .card .main-content{
     padding-top: 15px;
 }
 body:not(.origin) #app .card .main-content .user-name,
-body:not(.origin) #app .card .main-content .time/*,
-body:not(.origin) #app .card-content > .description*/{
+body:not(.origin) #app .card .main-content .time{
     margin-left: 76px;
 }
 body:not(.origin) #app .card .user-head{
@@ -134,18 +123,9 @@ body:not(.origin) #app .forw-area{
 body:not(.origin) #app .comment-area .comm-main,
 body:not(.origin) #app .forw-area .forw-main{
     padding-left: 12px;
-    /*width: 100%;
-    box-sizing: border-box;*/
+
 }
-/*body:not(.origin) #app .textarea-container .textarea{
-    width: 472px !important;
-}
-body:not(.origin) #app .comm-list .textarea-container .textarea{
-    width: 460px !important;
-}
-body:not(.origin) #app .dynamic-list-item-wrap .item-detail .text, body:not(.origin) #app .child-item-warp .item-detail{
-    width: 482px;
-}*/
+
 body:not(.origin) #app .comm-face,
 body:not(.origin) #app .forw-face{
     margin-right: 5px;
